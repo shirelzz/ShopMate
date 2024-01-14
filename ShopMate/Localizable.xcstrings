@@ -2,6 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -18,6 +19,7 @@
       }
     },
     " %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -68,6 +70,7 @@
       }
     },
     "," : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -95,6 +98,7 @@
       }
     },
     "%.2f" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -111,6 +115,7 @@
       }
     },
     "%@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -127,6 +132,7 @@
       }
     },
     "%@ (Quantity: %lld)" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -143,6 +149,7 @@
       }
     },
     "%@%.2f" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -159,6 +166,7 @@
       }
     },
     "%@%lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -226,6 +234,7 @@
       }
     },
     "2023" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -242,6 +251,7 @@
       }
     },
     "2024" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -258,6 +268,7 @@
       }
     },
     "2025" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -274,6 +285,7 @@
       }
     },
     "2026" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -339,6 +351,7 @@
       }
     },
     "Add Item" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -355,6 +368,7 @@
       }
     },
     "Add item to order" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -404,6 +418,7 @@
       }
     },
     "Added Items" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -437,6 +452,7 @@
       }
     },
     "Address" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -589,6 +605,7 @@
       }
     },
     "Allergies:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -605,6 +622,7 @@
       }
     },
     "Are you sure you want to delete this item?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -621,6 +639,7 @@
       }
     },
     "Are you sure you want to delete this order?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -637,6 +656,7 @@
       }
     },
     "Are you sure you want to generate this receipt?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -670,6 +690,7 @@
       }
     },
     "Bank transfer" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -686,6 +707,7 @@
       }
     },
     "Bit" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -702,6 +724,7 @@
       }
     },
     "Cancel" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -718,6 +741,7 @@
       }
     },
     "Cash" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -734,6 +758,7 @@
       }
     },
     "Change Name" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -750,6 +775,7 @@
       }
     },
     "Change Notes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -766,6 +792,7 @@
       }
     },
     "Change Price" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -782,6 +809,7 @@
       }
     },
     "Change Quantity" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -798,6 +826,7 @@
       }
     },
     "Change Size" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -864,6 +893,7 @@
       }
     },
     "Confirm Deletion" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -896,6 +926,7 @@
       }
     },
     "Copy name" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -912,6 +943,7 @@
       }
     },
     "Copy order details" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -928,6 +960,7 @@
       }
     },
     "Copy Phone Number" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -944,6 +977,7 @@
       }
     },
     "Create new item" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -977,6 +1011,7 @@
       }
     },
     "Current receipt Number %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1027,6 +1062,7 @@
       }
     },
     "Customer: %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1043,6 +1079,7 @@
       }
     },
     "Customized Data" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1076,6 +1113,7 @@
       }
     },
     "Dashboard" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1092,6 +1130,7 @@
       }
     },
     "Date Added" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1153,6 +1192,7 @@
       }
     },
     "Date added: %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1220,6 +1260,7 @@
       }
     },
     "Date Generated:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1236,6 +1277,7 @@
       }
     },
     "Date: %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1252,6 +1294,7 @@
       }
     },
     "Days: %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1268,6 +1311,7 @@
       }
     },
     "Delete" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1284,6 +1328,7 @@
       }
     },
     "Delete Order" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1368,6 +1413,7 @@
       }
     },
     "Delivery cost: %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1384,6 +1430,7 @@
       }
     },
     "Delivery Cost: %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1434,6 +1481,7 @@
       }
     },
     "Dessert: %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1450,6 +1498,7 @@
       }
     },
     "Done" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1466,6 +1515,7 @@
       }
     },
     "Edit" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1482,6 +1532,7 @@
       }
     },
     "Edit Item" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1498,6 +1549,7 @@
       }
     },
     "Edit Order" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1514,6 +1566,7 @@
       }
     },
     "Enter Price" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1530,6 +1583,7 @@
       }
     },
     "Enter Quantity" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1546,6 +1600,7 @@
       }
     },
     "EUR" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1562,6 +1617,7 @@
       }
     },
     "Export Receipts" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1595,6 +1651,7 @@
       }
     },
     "Filter" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1628,6 +1685,7 @@
       }
     },
     "For" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1644,6 +1702,7 @@
       }
     },
     "For: " : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1660,6 +1719,7 @@
       }
     },
     "GBP" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1676,6 +1736,7 @@
       }
     },
     "Generate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1692,6 +1753,7 @@
       }
     },
     "Generate PDF Receipt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1708,6 +1770,7 @@
       }
     },
     "Generate Receipt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1740,7 +1803,11 @@
         }
       }
     },
+    "Hello, world! 2" : {
+
+    },
     "ILS" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1757,6 +1824,7 @@
       }
     },
     "Income Review" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1790,6 +1858,7 @@
       }
     },
     "Inventory Items" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1806,6 +1875,7 @@
       }
     },
     "Inventory Notifications" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1839,6 +1909,7 @@
       }
     },
     "item" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1872,6 +1943,7 @@
       }
     },
     "Item Details" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1888,6 +1960,7 @@
       }
     },
     "Item Information" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1938,6 +2011,7 @@
       }
     },
     "Logo" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1954,6 +2028,7 @@
       }
     },
     "Month" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1970,6 +2045,7 @@
       }
     },
     "More Information" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1986,6 +2062,7 @@
       }
     },
     "Most Ordered" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2052,6 +2129,7 @@
       }
     },
     "Name: %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2068,6 +2146,7 @@
       }
     },
     "New Item" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2084,6 +2163,7 @@
       }
     },
     "New Order" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2117,6 +2197,7 @@
       }
     },
     "No inventory items yet" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2150,6 +2231,7 @@
       }
     },
     "No orders yet" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2166,6 +2248,7 @@
       }
     },
     "No upcoming orders yet" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2197,6 +2280,9 @@
           }
         }
       }
+    },
+    "Note: signing in with Google or Apple allows you to view your data through all your connected devices." : {
+
     },
     "Notes" : {
       "extractionState" : "manual",
@@ -2233,6 +2319,7 @@
       }
     },
     "Notes: %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2249,6 +2336,7 @@
       }
     },
     "Notification center" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2265,6 +2353,7 @@
       }
     },
     "Notification Settings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2281,6 +2370,7 @@
       }
     },
     "Notifications" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2297,6 +2387,7 @@
       }
     },
     "Notify me before order time" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2313,6 +2404,7 @@
       }
     },
     "Notify me for low inventory" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2346,6 +2438,7 @@
       }
     },
     "Number of Orders This Week: %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2389,6 +2482,7 @@
       }
     },
     "Order Date" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2422,6 +2516,7 @@
       }
     },
     "Order Details" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2506,6 +2601,7 @@
       }
     },
     "Order Time Notifications" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2539,6 +2635,7 @@
       }
     },
     "Paybox" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2572,6 +2669,7 @@
       }
     },
     "Payment Date:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2605,6 +2703,7 @@
       }
     },
     "Payment Method" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2638,6 +2737,7 @@
       }
     },
     "Payment Method:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2687,6 +2787,7 @@
       }
     },
     "Phone Number" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2720,6 +2821,7 @@
       }
     },
     "Phone: " : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2798,6 +2900,7 @@
       }
     },
     "Please enter a valid quantity." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2831,6 +2934,7 @@
       }
     },
     "Price:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2864,6 +2968,7 @@
       }
     },
     "Price: %.2f" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2914,6 +3019,7 @@
       }
     },
     "Price:%@%.2f" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2964,6 +3070,7 @@
       }
     },
     "Q: %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3030,6 +3137,7 @@
       }
     },
     "Quantity exceeds available quantity" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3046,6 +3154,7 @@
       }
     },
     "Quantity is less or equal to zero." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3096,6 +3205,7 @@
       }
     },
     "Quantity: %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3145,6 +3255,7 @@
       }
     },
     "Receipt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3161,6 +3272,7 @@
       }
     },
     "Receipt center" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3228,6 +3340,7 @@
       }
     },
     "Receipt No. %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3261,6 +3374,7 @@
       }
     },
     "Receipt number" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3311,6 +3425,7 @@
       }
     },
     "Save" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3344,6 +3459,7 @@
       }
     },
     "Save images" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3360,6 +3476,7 @@
       }
     },
     "Search" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3410,6 +3527,7 @@
       }
     },
     "Select currency" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3426,6 +3544,7 @@
       }
     },
     "Select image" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3510,6 +3629,7 @@
       }
     },
     "Selected Year" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3560,6 +3680,7 @@
       }
     },
     "Share PDF Receipt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3609,6 +3730,7 @@
       }
     },
     "Show Receipt Preview" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3673,6 +3795,7 @@
       }
     },
     "Signature" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3689,6 +3812,7 @@
       }
     },
     "Size" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3722,6 +3846,7 @@
       }
     },
     "Size: %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3738,6 +3863,7 @@
       }
     },
     "Sort By" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3754,6 +3880,7 @@
       }
     },
     "Start creatng receipts at" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3770,6 +3897,7 @@
       }
     },
     "This Photo will be used for your receipts as a logo" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3786,6 +3914,7 @@
       }
     },
     "This Photo will be used for your receipts as a signature" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3802,6 +3931,7 @@
       }
     },
     "This Week's Income:  %@%.2f" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3852,6 +3982,7 @@
       }
     },
     "Total Price: %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3868,6 +3999,7 @@
       }
     },
     "Total Price: %@%.2f" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3918,6 +4050,7 @@
       }
     },
     "Total Price:%@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3951,6 +4084,7 @@
       }
     },
     "USD" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4000,6 +4134,7 @@
       }
     },
     "Week" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4065,6 +4200,7 @@
       }
     },
     "Yearly Income Graph" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

@@ -8,7 +8,7 @@
 import Foundation
 
 class AuthState: ObservableObject {
+    
     @Published var isAuthenticated = false
 
-//    @Published var isAuthenticated = Auth.auth().currentUser != nil
 }

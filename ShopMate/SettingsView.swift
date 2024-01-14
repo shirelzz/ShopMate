@@ -36,18 +36,6 @@ struct SettingsView: View {
         
     }
     
-    
-    private func updateAppearance() {
-        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-        let window = windowScene?.windows.first
-        
-        if darkModeOn {
-            window?.overrideUserInterfaceStyle = .dark
-        } else {
-            window?.overrideUserInterfaceStyle = .light
-        }
-    }
-    
 }
 
 extension String {
