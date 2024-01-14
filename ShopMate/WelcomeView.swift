@@ -29,7 +29,7 @@ struct WelcomeView: View {
             
             VStack {
                 
-                Image("aesthetic")
+                Image("aesthticYellow")
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.top)
@@ -38,7 +38,7 @@ struct WelcomeView: View {
                     Text("Welcome!")
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                    Text("We are so happy to see you 🥳")
+                    Text("So good to see you 🥳")
                 }
                 .padding(.top, 40)
                 
