@@ -59,7 +59,7 @@
 		D6F7080D2B541C2400616E26 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7080C2B541C2400616E26 /* MainView.swift */; };
 		D6F708102B541D1300616E26 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7080F2B541D1300616E26 /* LaunchView.swift */; };
 		D6F708122B541DE200616E26 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F708112B541DE200616E26 /* WelcomeView.swift */; };
-		D6F708142B54200300616E26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6F708132B54200300616E26 /* GoogleService-Info.plist */; };
+		D6F708192B542CE300616E26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6F708182B542CE300616E26 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,7 +89,8 @@
 		D6F7080C2B541C2400616E26 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D6F7080F2B541D1300616E26 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		D6F708112B541DE200616E26 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		D6F708132B54200300616E26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D6F708152B54215600616E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D6F708182B542CE300616E26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +151,8 @@
 		D6E9A7762B54121F007D138C /* ShopMate */ = {
 			isa = PBXGroup;
 			children = (
-				D6F708132B54200300616E26 /* GoogleService-Info.plist */,
+				D6F708182B542CE300616E26 /* GoogleService-Info.plist */,
+				D6F708152B54215600616E26 /* Info.plist */,
 				D6E9A7932B5412F6007D138C /* Utils */,
 				D6E9A7A82B541328007D138C /* ShopMate.entitlements */,
 				D6E9A78F2B5412DA007D138C /* ShoppingListView.swift */,
@@ -308,7 +310,7 @@
 				D6E9A77F2B541220007D138C /* Preview Assets.xcassets in Resources */,
 				D6E9A77C2B541220007D138C /* Assets.xcassets in Resources */,
 				D6E9A78A2B5412BC007D138C /* Localizable.xcstrings in Resources */,
-				D6F708142B54200300616E26 /* GoogleService-Info.plist in Resources */,
+				D6F708192B542CE300616E26 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,7 +479,7 @@
 				DEVELOPMENT_TEAM = 5M6RD9L4AH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = ShopMate;
+				INFOPLIST_FILE = ShopMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -488,6 +490,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "ShopMate-com.ShopMate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -508,7 +512,7 @@
 				DEVELOPMENT_TEAM = 5M6RD9L4AH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = ShopMate;
+				INFOPLIST_FILE = ShopMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -519,6 +523,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "ShopMate-com.ShopMate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

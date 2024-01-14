@@ -10,7 +10,8 @@ import GoogleMobileAds
 import SwiftUI
 import AVFoundation
 
-
+// my banner: ca-app-pub-1213016211458907/4119870490
+// my open app:  ca-app-pub-1213016211458907/3842019964
 struct AdBannerView: UIViewRepresentable {
     let adUnitID: String
 
