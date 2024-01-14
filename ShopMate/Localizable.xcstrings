@@ -18,6 +18,9 @@
         }
       }
     },
+    "   Hello User" : {
+
+    },
     " %lld" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -34,6 +37,9 @@
           }
         }
       }
+    },
+    " Favorites" : {
+
     },
     " Price: $" : {
       "extractionState" : "manual",
@@ -233,74 +239,6 @@
         }
       }
     },
-    "2023" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2023"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2023"
-          }
-        }
-      }
-    },
-    "2024" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2024"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2024"
-          }
-        }
-      }
-    },
-    "2025" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2025"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2025"
-          }
-        }
-      }
-    },
-    "2026" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2026"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2026"
-          }
-        }
-      }
-    },
     "Account" : {
       "localizations" : {
         "en" : {
@@ -350,40 +288,6 @@
         }
       }
     },
-    "Add Item" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add Item"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הוסף פריט"
-          }
-        }
-      }
-    },
-    "Add item to order" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add item to order"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הוסף פריט להזמנה"
-          }
-        }
-      }
-    },
     "Add New Item" : {
       "localizations" : {
         "en" : {
@@ -400,39 +304,8 @@
         }
       }
     },
-    "Add Order" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add Order"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הוסף הזמנה"
-          }
-        }
-      }
-    },
-    "Added Items" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Added Items"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "פריטים שנוספו"
-          }
-        }
-      }
+    "Add to favorites" : {
+
     },
     "Additional Details" : {
       "extractionState" : "manual",
@@ -447,23 +320,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "פרטים נוספים"
-          }
-        }
-      }
-    },
-    "Address" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Address"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "כתובת"
           }
         }
       }
@@ -485,23 +341,6 @@
         }
       }
     },
-    "All Inventory Items" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "All Inventory Items"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "כל הפריטים"
-          }
-        }
-      }
-    },
     "All Items" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -515,108 +354,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "כל הפריטים"
-          }
-        }
-      }
-    },
-    "All orders" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "All orders"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "כל ההזמנות"
-          }
-        }
-      }
-    },
-    "All Orders" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "All Orders"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "כל ההזמנות"
-          }
-        }
-      }
-    },
-    "All receipts" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "All receipts"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "כל הקבלות"
-          }
-        }
-      }
-    },
-    "All Receipts" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "All Receipts"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "כל הקבלות"
-          }
-        }
-      }
-    },
-    "Allergies" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Allergies"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "אלרגיות"
-          }
-        }
-      }
-    },
-    "Allergies:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Allergies:"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "אלרגיות:"
           }
         }
       }
@@ -655,23 +392,6 @@
         }
       }
     },
-    "Are you sure you want to generate this receipt?" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Are you sure you want to generate this receipt?"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "לייצר קבלה זו?"
-          }
-        }
-      }
-    },
     "Back" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -685,40 +405,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "חזור"
-          }
-        }
-      }
-    },
-    "Bank transfer" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bank transfer"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "העברה בנקאית"
-          }
-        }
-      }
-    },
-    "Bit" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bit"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bit"
           }
         }
       }
@@ -740,40 +426,6 @@
         }
       }
     },
-    "Cash" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cash"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "מזומן"
-          }
-        }
-      }
-    },
-    "Change Name" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Change Name"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "שנה שם"
-          }
-        }
-      }
-    },
     "Change Notes" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -787,23 +439,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "שנה הערות"
-          }
-        }
-      }
-    },
-    "Change Price" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Change Price"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "שנה מחיר"
           }
         }
       }
@@ -993,23 +628,6 @@
         }
       }
     },
-    "Currency" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Currency"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "מטבע"
-          }
-        }
-      }
-    },
     "Current receipt Number %lld" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1027,159 +645,6 @@
         }
       }
     },
-    "Customer Information" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Customer Information"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "פרטי לקוח"
-          }
-        }
-      }
-    },
-    "Customer Name" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Customer Name"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "שם הלקוח"
-          }
-        }
-      }
-    },
-    "Customer: %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Customer:  %@"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "לקוח: %@"
-          }
-        }
-      }
-    },
-    "Customized Data" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Customized Data"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "מידע מותאם אישית"
-          }
-        }
-      }
-    },
-    "Customized Date" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Customized Date"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "מידע מותאם אישית"
-          }
-        }
-      }
-    },
-    "Dashboard" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dashboard"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "סקירה"
-          }
-        }
-      }
-    },
-    "Date Added" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Date Added"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "תאריך הוספה"
-          }
-        }
-      }
-    },
-    "Date Added (newest first)" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Date Added (newest first)"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "תאריך הוספה (מהחדש ביותר)"
-          }
-        }
-      }
-    },
-    "Date Added (oldest first)" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Date Added (oldest first)"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "תאריך הוספה (מהישן ביותר)"
-          }
-        }
-      }
-    },
     "Date added:" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1187,125 +652,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "תאריך הוספה:"
-          }
-        }
-      }
-    },
-    "Date added: %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Date added: %@"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "תאריך הוספה: %@"
-          }
-        }
-      }
-    },
-    "Date created:" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Date created:"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "תאריך יצירה:"
-          }
-        }
-      }
-    },
-    "Date created: " : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Date created: "
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "תאריך יצירה: "
-          }
-        }
-      }
-    },
-    "Date Created: " : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Date Created: "
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "תאריך יצירה: "
-          }
-        }
-      }
-    },
-    "Date Generated:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Date Generated:"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "תאריך יצירת המסמך:"
-          }
-        }
-      }
-    },
-    "Date: %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Date:  %@"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "תאריך: %@"
-          }
-        }
-      }
-    },
-    "Days: %lld" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Days: %lld"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ימים: %lld"
           }
         }
       }
@@ -1323,176 +669,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "מחק"
-          }
-        }
-      }
-    },
-    "Delete Order" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delete Order"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "מחק הזמנה"
-          }
-        }
-      }
-    },
-    "Delivered" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delivered"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "נמסר"
-          }
-        }
-      }
-    },
-    "delivery" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "delivery"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "משלוח"
-          }
-        }
-      }
-    },
-    "Delivery" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delivery"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "משלוח"
-          }
-        }
-      }
-    },
-    "Delivery Address:" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delivery Address:"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "כתובת למשלוח:"
-          }
-        }
-      }
-    },
-    "Delivery cost: %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delivery cost: %@"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "עלות משלוח: %@"
-          }
-        }
-      }
-    },
-    "Delivery Cost: %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delivery Cost: %@"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "עלות משלוח: %@"
-          }
-        }
-      }
-    },
-    "Delivery cost: $" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delivery cost: $"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "עלות משלוח: ₪"
-          }
-        }
-      }
-    },
-    "Delivery Cost: $" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delivery Cost: $"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "עלות משלוח: ₪"
-          }
-        }
-      }
-    },
-    "Dessert: %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dessert: %@"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "קינוח: %@"
           }
         }
       }
@@ -1548,23 +724,6 @@
         }
       }
     },
-    "Edit Order" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Edit Order"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ערוך הזמנה"
-          }
-        }
-      }
-    },
     "Enter Price" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1599,22 +758,11 @@
         }
       }
     },
-    "EUR" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EUR"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EUR"
-          }
-        }
-      }
+    "Enter text" : {
+
+    },
+    "Enter text here" : {
+
     },
     "Export Receipts" : {
       "extractionState" : "stale",
@@ -1633,22 +781,8 @@
         }
       }
     },
-    "Feedback" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Feedback"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "פידבק"
-          }
-        }
-      }
+    "Favorites" : {
+
     },
     "Filter" : {
       "extractionState" : "stale",
@@ -1718,94 +852,6 @@
         }
       }
     },
-    "GBP" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GBP"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GBP"
-          }
-        }
-      }
-    },
-    "Generate" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Generate"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ייצר"
-          }
-        }
-      }
-    },
-    "Generate PDF Receipt" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Generate PDF Receipt"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ייצר קבלה"
-          }
-        }
-      }
-    },
-    "Generate Receipt" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Generate Receipt"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ייצר קבלה"
-          }
-        }
-      }
-    },
-    "Hello, World!" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hello World!"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "שלום!"
-          }
-        }
-      }
-    },
-    "Hello, world! 2" : {
-
-    },
     "ILS" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1823,107 +869,8 @@
         }
       }
     },
-    "Income Review" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Income Review"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "סקירת הכנסה"
-          }
-        }
-      }
-    },
-    "Inventory" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Inventory"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "מלאי"
-          }
-        }
-      }
-    },
-    "Inventory Items" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Inventory Items"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "פריטים במלאי"
-          }
-        }
-      }
-    },
-    "Inventory Notifications" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Inventory Notifications"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "התראות מלאי"
-          }
-        }
-      }
-    },
-    "isPaid: %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "isPaid: %@"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "שולם: %@"
-          }
-        }
-      }
-    },
-    "item" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "item"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "פריט"
-          }
-        }
-      }
+    "isInfoOpen: %@" : {
+
     },
     "Item" : {
       "extractionState" : "stale",
@@ -2010,23 +957,6 @@
         }
       }
     },
-    "Logo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Logo"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "לוגו"
-          }
-        }
-      }
-    },
     "Month" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -2074,23 +1004,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "הכי מוזמנים"
-          }
-        }
-      }
-    },
-    "Most Ordered This Week" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Most Ordered This Week"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הכי מבוקשים השבוע"
           }
         }
       }
@@ -2158,23 +1071,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "פריט חדש"
-          }
-        }
-      }
-    },
-    "New Order" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "New Order"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הזמנה חדשה"
           }
         }
       }
@@ -2352,119 +1248,6 @@
         }
       }
     },
-    "Notification Settings" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notification Settings"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הגדרת התראות"
-          }
-        }
-      }
-    },
-    "Notifications" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notifications"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "התראות"
-          }
-        }
-      }
-    },
-    "Notify me before order time" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notify me before order time"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "שלח התראה לפני מועד הזמנה"
-          }
-        }
-      }
-    },
-    "Notify me for low inventory" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notify me for low inventory"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "אפשר התראות מלאי"
-          }
-        }
-      }
-    },
-    "Number of Orders This Week: %.2f" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Number of Orders This Week: %.2f"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "מספר הזמנות השבוע: %.2f"
-          }
-        }
-      }
-    },
-    "Number of Orders This Week: %lld" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Number of Orders This Week: %lld"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "מספר הזמנות השבוע: %lld"
-          }
-        }
-      }
-    },
-    "OK" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "בסדר"
-          }
-        }
-      }
-    },
     "or" : {
       "localizations" : {
         "en" : {
@@ -2477,142 +1260,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "או"
-          }
-        }
-      }
-    },
-    "Order Date" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Order Date"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "מועד הזמנה"
-          }
-        }
-      }
-    },
-    "Order Date:" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Order Date:"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "מועד הזמנה:"
-          }
-        }
-      }
-    },
-    "Order Details" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Order Details"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "פרטי הזמנה"
-          }
-        }
-      }
-    },
-    "Order Details:" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Order Details:"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "פרטי הזמנה:"
-          }
-        }
-      }
-    },
-    "Order Details: " : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Order Details: "
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "פרטי הזמנה: "
-          }
-        }
-      }
-    },
-    "Order Information" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Order Information"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "פרטי הזמנה"
-          }
-        }
-      }
-    },
-    "Order Status" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Order Status"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "סטטוס הזמנה"
-          }
-        }
-      }
-    },
-    "Order Time Notifications" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Order Time Notifications"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "התראות על מועדי הזמנה"
           }
         }
       }
@@ -2630,142 +1277,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "שולם"
-          }
-        }
-      }
-    },
-    "Paybox" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paybox"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paybox"
-          }
-        }
-      }
-    },
-    "Payment date:" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Payment date:"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "מועד התשלום: "
-          }
-        }
-      }
-    },
-    "Payment Date:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Payment Date:"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "מועד התשלום: "
-          }
-        }
-      }
-    },
-    "Payment date:  " : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Payment date:  "
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "מועד התשלום: "
-          }
-        }
-      }
-    },
-    "Payment Method" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Payment Method"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "אופן התשלום"
-          }
-        }
-      }
-    },
-    "Payment method:" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Payment method:"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "אופן התשלום: "
-          }
-        }
-      }
-    },
-    "Payment Method:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Payment Method:"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "אופן התשלום: "
-          }
-        }
-      }
-    },
-    "Payment method: " : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Payment method: "
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "אופן התשלום: "
           }
         }
       }
@@ -3136,40 +1647,6 @@
         }
       }
     },
-    "Quantity exceeds available quantity" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quantity exceeds available quantity"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הכמות שהזנת גבוהה מהכמות במלאי"
-          }
-        }
-      }
-    },
-    "Quantity is less or equal to zero." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quantity is less or equal to zero."
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "כמות קטנה או שווה לאפס"
-          }
-        }
-      }
-    },
     "Quantity:" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3254,178 +1731,10 @@
         }
       }
     },
-    "Receipt" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Receipt"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "קבלה"
-          }
-        }
-      }
-    },
-    "Receipt center" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Receipt center"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הגדרות קבלה"
-          }
-        }
-      }
-    },
-    "receipt exist: %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "receipt exist: %@"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "קבלה קיימת: %@"
-          }
-        }
-      }
-    },
-    "Receipt No." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Receipt No."
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "קבלה מספר"
-          }
-        }
-      }
-    },
-    "Receipt No. " : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Receipt No. "
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "קבלה מספר"
-          }
-        }
-      }
-    },
-    "Receipt No. %lld" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Receipt No. %lld"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "קבלה מספר %lld"
-          }
-        }
-      }
-    },
-    "Receipt No.%lld" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Receipt No.%lld"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "קבלה מספר %lld"
-          }
-        }
-      }
-    },
-    "Receipt number" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Receipt number"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "מספר קבלה"
-          }
-        }
-      }
-    },
-    "Receive inventory notifications" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Receive inventory notifications"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "קבל התראות מלאי"
-          }
-        }
-      }
-    },
-    "Receive order time notifications" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Receive order time notifications"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "קבל התראות על מועד הזמנה מתקרב"
-          }
-        }
-      }
+    "Remove from favorites" : {
+
     },
     "Save" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3454,23 +1763,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "שמור שינויים"
-          }
-        }
-      }
-    },
-    "Save images" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Save images"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "שמור תמונות"
           }
         }
       }
@@ -3509,91 +1801,6 @@
         }
       }
     },
-    "See item details" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "See item details"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הראה פרטי פריט"
-          }
-        }
-      }
-    },
-    "Select currency" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select currency"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "בחירת מטבע"
-          }
-        }
-      }
-    },
-    "Select image" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select image"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "בחר תמונה"
-          }
-        }
-      }
-    },
-    "Select Language" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select Language"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "בחר.י שפה"
-          }
-        }
-      }
-    },
-    "Select logo image" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select logo image"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "בחר תמונת לוגו"
-          }
-        }
-      }
-    },
     "Select signature image" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -3607,57 +1814,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "בחר תמונה של החתימה"
-          }
-        }
-      }
-    },
-    "Select Year" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select Year"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "בחר שנה"
-          }
-        }
-      }
-    },
-    "Selected Year" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selected Year"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "שנה שנבחרה"
-          }
-        }
-      }
-    },
-    "Send Suggestions" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Send Suggestions"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "שלח.י הצעה"
           }
         }
       }
@@ -3679,23 +1835,6 @@
         }
       }
     },
-    "Share PDF Receipt" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Share PDF Receipt"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "שתף קבלה"
-          }
-        }
-      }
-    },
     "Shopping List" : {
       "localizations" : {
         "en" : {
@@ -3708,40 +1847,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "רשימת קניות"
-          }
-        }
-      }
-    },
-    "Show Preview" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Show Preview"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הראה תצוגה מקדימה"
-          }
-        }
-      }
-    },
-    "Show Receipt Preview" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Show Receipt Preview"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הראה תצוגה מקדימה של הקבלה"
           }
         }
       }
@@ -3790,23 +1895,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "התנתק"
-          }
-        }
-      }
-    },
-    "Signature" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Signature"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "חתימה"
           }
         }
       }
@@ -3862,6 +1950,9 @@
         }
       }
     },
+    "So good to see you 🥳" : {
+
+    },
     "Sort By" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -3896,23 +1987,6 @@
         }
       }
     },
-    "This Photo will be used for your receipts as a logo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This Photo will be used for your receipts as a logo"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "תמונה זו תשמש בקבלות כלוגו"
-          }
-        }
-      }
-    },
     "This Photo will be used for your receipts as a signature" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -3926,23 +2000,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "תמונה זו תשמש בקבלות כחתימה"
-          }
-        }
-      }
-    },
-    "This Week's Income:  %@%.2f" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "This Week's Income:  %1$@%2$.2f"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הכנסה שבועית:   %1$@%2$.2f"
           }
         }
       }
@@ -4066,23 +2123,6 @@
         }
       }
     },
-    "Upcoming Orders" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Upcoming Orders"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הזמנות קרובות"
-          }
-        }
-      }
-    },
     "USD" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -4101,6 +2141,7 @@
       }
     },
     "We are so happy to see you 🥳" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4229,23 +2270,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "כן"
-          }
-        }
-      }
-    },
-    "You might need to relaunch the app before you see this change through all screens" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "You might need to relaunch the app before you see this change through all screens"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "אולי תצטרך.י להפעיל את האפליקציה מחדש כדי לראות את השינוי בכל המסכים"
           }
         }
       }

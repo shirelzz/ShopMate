@@ -53,6 +53,7 @@ struct MainView: View {
                         
                     } else {
                         ContentView()
+//                        ShoppingListView(shoppingList: ShoppingList.shared)
                             .navigationBarHidden(true)
                     }
                 }

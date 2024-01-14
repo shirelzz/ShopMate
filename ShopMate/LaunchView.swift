@@ -13,7 +13,7 @@ struct LaunchView: View {
 
     var body: some View {
         
-        let imageName = colorScheme == .dark ? "aesthetic" : "storeLogo"
+        let imageName = colorScheme == .dark ? "darkLogo" : "lightLogo"
 
         Image(imageName)
                 .resizable()

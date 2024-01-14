@@ -41,8 +41,9 @@ class DatabaseManager {
                       let shoppingItemID = shoppingItemDict["shoppingItemID"] as? String,
                       let name = shoppingItemDict["name"] as? String,
                       let quantity = shoppingItemDict["quantity"] as? Int,
-                      let isChecked = shoppingItemDict["isChecked"] as? Bool
- 
+                      let isChecked = shoppingItemDict["isChecked"] as? Bool,
+                      let notes = shoppingItemDict["notes"] as? String,
+                      let isHearted = shoppingItemDict["isHearted"] as? Bool
                 else {
                     print("shoppingItem else called")
                     continue
@@ -52,7 +53,9 @@ class DatabaseManager {
                     shoppingItemID: shoppingItemID,
                     name:  name,
                     quantity: quantity,
-                    isChecked: isChecked
+                    isChecked: isChecked,
+                    notes: notes,
+                    isHearted: isHearted
                 )
                 
                 shoppingItems.append(shoppingItem)

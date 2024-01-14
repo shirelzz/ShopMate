@@ -33,7 +33,9 @@ struct ShoppingListView: View {
                                 shoppingItemID: UUID().uuidString,
                                 name: newItemName,
                                 quantity: (Int)(newItemQuantity) ?? 0,
-                                isChecked: false
+                                isChecked: false,
+                                notes: "",
+                                isHearted: false
                             )
                             
                             ShoppingList.shared.addItem(item: newItem)
@@ -79,8 +81,8 @@ struct ShoppingListView: View {
 struct ShoppingListView_Previews: PreviewProvider {
     static var previews: some View {
         let previewList = ShoppingList()
-        previewList.addItem(item: ShoppingItem(shoppingItemID: UUID().uuidString, name: "Cocoa", quantity: 1, isChecked: false))
-        previewList.addItem(item: ShoppingItem(shoppingItemID: UUID().uuidString, name: "Milk", quantity: 4, isChecked: false))
+        previewList.addItem(item: ShoppingItem(shoppingItemID: UUID().uuidString, name: "Cocoa", quantity: 1, isChecked: false, notes: "String", isHearted: false))
+        previewList.addItem(item: ShoppingItem(shoppingItemID: UUID().uuidString, name: "Milk", quantity: 4, isChecked: false, notes: "", isHearted: true))
 
         return ShoppingListView(shoppingList: previewList)
     }

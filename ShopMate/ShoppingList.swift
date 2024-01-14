@@ -12,16 +12,30 @@ struct ShoppingItem: Codable, Identifiable, Hashable {
     
     var id: String { shoppingItemID }
     var shoppingItemID: String
-//    let id = UUID()
     var name: String
     var quantity: Int
     var isChecked: Bool
+    var notes: String
+    var isHearted: Bool
     
-    init(shoppingItemID: String, name: String, quantity: Int, isChecked: Bool) {
+    init() {
+        self.shoppingItemID = ""
+        self.name = ""
+        self.quantity = 0
+        self.isChecked = false
+        self.notes = ""
+        self.isHearted = false
+
+    }
+    
+    init(shoppingItemID: String, name: String, quantity: Int, isChecked: Bool, notes: String, isHearted: Bool) {
         self.shoppingItemID = shoppingItemID
         self.name = name
         self.quantity = quantity
         self.isChecked = isChecked
+        self.notes = notes
+        self.isHearted = isHearted
+
     }
     
     func dictionaryRepresentation() -> [String: Any] {
@@ -31,7 +45,9 @@ struct ShoppingItem: Codable, Identifiable, Hashable {
             "shoppingItemID": shoppingItemID,
             "name": name,
             "quantity": quantity,
-            "isChecked": isChecked
+            "isChecked": isChecked,
+            "notes": notes,
+            "isHearted": isHearted
 
         ]
         return ShoppingItemDict
@@ -42,7 +58,9 @@ struct ShoppingItem: Codable, Identifiable, Hashable {
         guard let shoppingItemID = dictionary["shoppingItemID"] as? String,
               let name = dictionary["name"] as? String,
               let quantity = dictionary["quantity"] as? Int,
-              let isChecked = dictionary["isChecked"] as? Bool
+              let isChecked = dictionary["isChecked"] as? Bool,
+              let notes = dictionary["notes"] as? String,
+              let isHearted = dictionary["isHearted"] as? Bool
         else {
             return nil
         }
@@ -50,7 +68,8 @@ struct ShoppingItem: Codable, Identifiable, Hashable {
         self.name = name
         self.quantity = quantity
         self.isChecked = isChecked
-
+        self.notes = notes
+        self.isHearted = isHearted
     }
 }
 
@@ -103,12 +122,6 @@ class ShoppingList: ObservableObject {
             DatabaseManager.shared.deleteItem(itemID: itemID, path: path)
         }
     }
-
-    // Example function to add a new item to the shopping list
-//    func addItem(name: String, quantity: Int) {
-//        let newItem = ShoppingItem(shoppingItemID: UUID().uuidString, name: name, quantity: quantity, isChecked: false)
-//        shoppingItems.append(newItem)
-//    }
     
     func addItem(item: ShoppingItem) {
         shoppingItems.append(item)
@@ -182,21 +195,65 @@ class ShoppingList: ObservableObject {
         if let index = shoppingItems.firstIndex(of: item) {
             shoppingItems[index].isChecked = newState
             
-            if isUserSignedIn {
-                if let currentUser = Auth.auth().currentUser {
-                    let userID = currentUser.uid
-                    let path = "users/\(userID)/shppingList/\(shoppingItems[index].shoppingItemID)"
-                    
-                    DatabaseManager.shared.updateItemInDB(shoppingItems[index], path: path) { success in
-                        if !success {
-                            print("updating in the database failed (updateIsChecked)")
-                        }
+            updateItem(index: index)
+
+        }
+    }
+    
+    func updateNotes(item: ShoppingItem, notes: String) {
+        if let index = shoppingItems.firstIndex(of: item) {
+            shoppingItems[index].notes = notes
+            
+            updateItem(index: index)
+
+        }
+    }
+    
+    func updateIsHearted(item: ShoppingItem, isHearted: Bool) {
+        if let index = shoppingItems.firstIndex(of: item) {
+            shoppingItems[index].isHearted = isHearted
+            
+            updateItem(index: index)
+
+        }
+    }
+    
+    func updateQuantity(item: ShoppingItem, newQuantity: Int) {
+        if let index = shoppingItems.firstIndex(of: item) {
+            shoppingItems[index].quantity = newQuantity
+            
+            updateItem(index: index)
+        }
+    }
+    
+    private func updateItem(index: Array<ShoppingItem>.Index) {
+        if isUserSignedIn {
+            if let currentUser = Auth.auth().currentUser {
+                let userID = currentUser.uid
+                let path = "users/\(userID)/shppingList/\(shoppingItems[index].shoppingItemID)"
+                
+                DatabaseManager.shared.updateItemInDB(shoppingItems[index], path: path) { success in
+                    if !success {
+                        print("updating in the database failed (update shopping item)")
                     }
                 }
-            } else {
-                saveItems2UD()
+            }
+        } else {
+            saveItems2UD()
+        }
+    }
+    
+    func getFavorites() -> [ShoppingItem] {
+        
+        var favoriteItems: [ShoppingItem] = []
+        
+        for item in shoppingItems {
+            if item.isHearted {
+                favoriteItems.append(item)
             }
         }
+        
+        return favoriteItems
     }
 }
 
