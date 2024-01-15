@@ -13,10 +13,12 @@ struct FavoritesView: View {
     @State private var isInfoOpen = false
     @State private var addedToFavorites = true
     @State private var inputText = ""
+    @State private var selectedItem: ShoppingItem = ShoppingItem()
 
     var body: some View {
         
         let width = UIScreen.main.bounds.width - 32
+        
         ZStack(alignment: .topTrailing) {
             
             VStack (alignment: .leading, spacing: 10) {
@@ -57,37 +59,15 @@ struct FavoritesView: View {
                             Spacer()
                             
                             Text(item.quantity.description)
-                            Text("isInfoOpen: \(isInfoOpen.description)")
 
                             Button {
-                                isInfoOpen.toggle()
+                                isInfoOpen = true
+                                selectedItem = item
+
                             } label: {
                                 Image(systemName: "info.circle")
                             }
-                            .popover(isPresented: $isInfoOpen, attachmentAnchor: .rect(.bounds), arrowEdge: .top) { //
-                                VStack {
-                                    // Text input field
-                                    TextField("Enter text", text: $inputText)
-                                        .padding()
-                                    
-                                    // Close button
-                                    Button("Save") {
-                                        ShoppingList.shared.updateNotes(item: item, notes: inputText)
-                                        inputText = ""
-                                        //                                    isInfoOpen.toggle()
-                                    }
-                                    .padding()
-                                    .buttonStyle(.borderedProminent)
-                                }
-                                .background(Color.white)
-                                .cornerRadius(10)
-                                .frame(width: width, height: 100)
-                                .padding()
-                                
-                            }
-                            .onDisappear(perform: {
-                                isInfoOpen.toggle()
-                            })
+                            
                         }
                         .contextMenu(ContextMenu(menuItems: {
                             
@@ -101,6 +81,10 @@ struct FavoritesView: View {
                         }))
                     }
                 }
+            }
+            
+            if isInfoOpen {
+                CustomDialog(isActive: $isInfoOpen, item: $selectedItem, title: "Details", buttonTitle: "Save")
             }
         }
     }

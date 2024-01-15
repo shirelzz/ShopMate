@@ -17,24 +17,16 @@ struct ContentView: View {
     
     @State private var inputText = ""
     @State private var selectedItem: ShoppingItem = ShoppingItem()
-    
-//    @State private var newQuantity = ""
     @State private var addedToFavorites = false
-    
-    enum PopoverState {
-        case closed
-        case opened(item: ShoppingItem)
-    }
-    @State private var popoverState: PopoverState = .closed
     
     var body: some View {
         
         let width = UIScreen.main.bounds.width - 32
         
         NavigationStack{
-            
+                        
             ZStack(alignment: .topTrailing) {
-                
+               
                 //                AppOpenAdView(adUnitID: "ca-app-pub-3940256099942544/5575463023")
                 // test:  ca-app-pub-3940256099942544/5575463023
                 
@@ -51,12 +43,12 @@ struct ContentView: View {
                         
                         HStack {
                             
-//                            Spacer()
+                            //                            Spacer()
                             
                             Text("   Hello User")
                                 .font(.largeTitle)
                                 .bold()
-//                                .padding(.leading)
+                            //                                .padding(.leading)
                             
                             Spacer(minLength: 10)
                             
@@ -66,9 +58,12 @@ struct ContentView: View {
                     }
                 }
             }
+
             //        }
             
             List {
+
+                
                 Section(header: Text("Add New Item")) {
                     HStack {
                         TextField("Name", text: $newItemName)
@@ -106,7 +101,7 @@ struct ContentView: View {
                 Section(header: Text("Shopping List")) {
                     
                     ForEach(shoppingList.shoppingItems) { item in
-
+                        
                         HStack {
                             Image(systemName: item.isChecked ? "checkmark.circle.fill" : "circle")
                                 .foregroundColor(item.isChecked ? .accentColor : .black)
@@ -116,7 +111,7 @@ struct ContentView: View {
                                 }
                             
                             Text(item.name)
-
+                            
                             Spacer()
                             
                             
@@ -137,51 +132,15 @@ struct ContentView: View {
                             Button {
                                 isInfoOverlayPresented = true
                                 selectedItem = item
-
+                                
                             } label: {
                                 Image(systemName: "info.circle")
                             }
-//                            .sheet(isPresented: $isInfoOverlayPresented, content: {
-//                                InfoOverlayView(isPresented: $isInfoOverlayPresented, item: item, width: width)
-//                                    .frame(height: 100)
-//                            })
                             .buttonStyle(.bordered)
+                            .background(.clear)
                             .buttonBorderShape(.circle)
-                            .background(.white)
-                           
-                           
-
-
-
-//                            Button {
-//                                isInfoOpen = true
-//                            } label: {
-//                                Image(systemName: "info.circle")
-//                            }
-
-//                            .popover(isPresented: $isInfoOpen, attachmentAnchor: .rect(.bounds), arrowEdge: .top) { //
-//                                VStack {
-//                                    // Text input field
-//                                    TextField("Enter text", text: $inputText)
-//                                        .padding()
-//                                    
-//                                    // Close button
-//                                    Button("Save") {
-//                                        ShoppingList.shared.updateNotes(item: item, notes: inputText)
-//                                        isInfoOpen.toggle()
-//                                    }
-//                                    .padding()
-//                                    .buttonStyle(.borderedProminent)
-//                                }
-//                                .background(Color.white)
-//                                .cornerRadius(10)
-//                                .frame(width: width, height: 100)
-//                                .padding()
-//                                
-//                            }
-//                            .buttonStyle(.bordered)
-//                            .buttonBorderShape(.circle)
-
+//                            .cornerRadius(10)
+                            
                         }
                         .contextMenu(ContextMenu(menuItems: {
                             
@@ -191,18 +150,19 @@ struct ContentView: View {
                             } label: {
                                 Text(addedToFavorites ? "Remove from favorites" : "Add to favorites")
                             }
-
+                            
                         }))
-                        
-                       
-
+                                                
                     }
                     
-                   
                 }
                 
-               
             }
+            .overlay(content: {
+                if isInfoOverlayPresented {
+                    CustomDialog(isActive: $isInfoOverlayPresented, item: $selectedItem, title: "Details", buttonTitle: "Save")
+                }
+            })
             .toolbar {
                 
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -215,11 +175,11 @@ struct ContentView: View {
                             }
                         }
                         
-//                        HStack {
-//                            NavigationLink(destination: SettingsView()) {
-//                                Label("Settings", systemImage: "gear")
-//                            }
-//                        }
+                        //                        HStack {
+                        //                            NavigationLink(destination: SettingsView()) {
+                        //                                Label("Settings", systemImage: "gear")
+                        //                            }
+                        //                        }
                         
                     } label: {
                         Image(systemName: "line.horizontal.3")
@@ -227,11 +187,10 @@ struct ContentView: View {
                 }
             }
             
+            // here
         }
         
-        if isInfoOverlayPresented {
-            CustomDialog(isActive: $isInfoOverlayPresented, item: $selectedItem, title: "Details", buttonTitle: "Save")            
-        }
+        
     }
     
     private func validateName() {

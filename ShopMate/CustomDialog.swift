@@ -27,14 +27,11 @@ struct CustomDialog: View {
                     close()
                 }
 
-            VStack {
+            VStack(spacing: 10)  {
                 Text(title)
                     .font(.title2)
                     .bold()
                     .padding()
-                
-                //                Text(message)
-                //                    .font(.body)
                 
                 // Text input field
                 TextField("Enter text", text: $inputText)
@@ -47,19 +44,27 @@ struct CustomDialog: View {
                     action()
                     close()
                 } label: {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .foregroundColor(.accentColor)
-                        
-                        Text(buttonTitle)
-                            .font(.system(size: 16, weight: .bold))
-                            .foregroundColor(.white)
-                            .padding()
-                    }
-                    .padding()
+                    
+                    Text(buttonTitle)
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundColor(.white)
+                        .padding()
+                    
+//                    ZStack {
+//                        RoundedRectangle(cornerRadius: 20)
+//                            .foregroundColor(.accentColor)
+//                        
+//                        Text(buttonTitle)
+//                            .font(.system(size: 16, weight: .bold))
+//                            .foregroundColor(.white)
+//                            .padding()
+//                    }
+//                    .padding()
                 }
+                .buttonStyle(.borderedProminent)
+                .frame(height: 50)
             }
-            .fixedSize(horizontal: false, vertical: true)
+//            .fixedSize(horizontal: false, vertical: true)
             .padding()
             .background(.white)
             .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -79,11 +84,14 @@ struct CustomDialog: View {
             .offset(x: 0, y: offset)
             .onAppear {
                 withAnimation(.spring()) {
+//                    offset = UIScreen.main.bounds.height / 4
                     offset = 0
                 }
             }
+
         }
         .ignoresSafeArea()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)  // For full-screen coverage
     }
     
     func action() {
