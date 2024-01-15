@@ -22,7 +22,7 @@ struct CustomDialog: View {
 
         ZStack {
             Color(.black)
-                .opacity(0.5)
+                .opacity(0.4)
                 .onTapGesture {
                     close()
                 }
@@ -48,23 +48,11 @@ struct CustomDialog: View {
                     Text(buttonTitle)
                         .font(.system(size: 16, weight: .bold))
                         .foregroundColor(.white)
-                        .padding()
-                    
-//                    ZStack {
-//                        RoundedRectangle(cornerRadius: 20)
-//                            .foregroundColor(.accentColor)
-//                        
-//                        Text(buttonTitle)
-//                            .font(.system(size: 16, weight: .bold))
-//                            .foregroundColor(.white)
-//                            .padding()
-//                    }
-//                    .padding()
+//                        .padding()
                 }
                 .buttonStyle(.borderedProminent)
                 .frame(height: 50)
             }
-//            .fixedSize(horizontal: false, vertical: true)
             .padding()
             .background(.white)
             .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -80,7 +68,7 @@ struct CustomDialog: View {
                 .padding()
             }
             .shadow(radius: 20)
-            .padding(30)
+            .padding(20) //30
             .offset(x: 0, y: offset)
             .onAppear {
                 withAnimation(.spring()) {

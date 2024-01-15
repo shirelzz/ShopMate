@@ -126,7 +126,7 @@ struct ContentView: View {
                                 }
                             ))
                             .keyboardType(.numberPad)
-                            .frame(width: width/5)
+                            .frame(width: width/6)
                             
                             // Inside ForEach loop
                             Button {
@@ -136,9 +136,9 @@ struct ContentView: View {
                             } label: {
                                 Image(systemName: "info.circle")
                             }
-                            .buttonStyle(.bordered)
-                            .background(.clear)
-                            .buttonBorderShape(.circle)
+                            .buttonStyle(.borderless)
+//                            .buttonStyle(.bordered)
+//                            .buttonBorderShape(.circle)
 //                            .cornerRadius(10)
                             
                         }

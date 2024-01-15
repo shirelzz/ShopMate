@@ -869,9 +869,6 @@
         }
       }
     },
-    "isInfoOpen: %@" : {
-
-    },
     "Item" : {
       "extractionState" : "stale",
       "localizations" : {

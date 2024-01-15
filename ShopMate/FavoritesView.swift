@@ -58,7 +58,7 @@ struct FavoritesView: View {
                             
                             Spacer()
                             
-                            Text(item.quantity.description)
+//                            Text(item.quantity.description)
 
                             Button {
                                 isInfoOpen = true
@@ -67,6 +67,7 @@ struct FavoritesView: View {
                             } label: {
                                 Image(systemName: "info.circle")
                             }
+                            .buttonStyle(.borderless)
                             
                         }
                         .contextMenu(ContextMenu(menuItems: {
@@ -81,11 +82,13 @@ struct FavoritesView: View {
                         }))
                     }
                 }
+                .overlay(content: {
+                    if isInfoOpen {
+                        CustomDialog(isActive: $isInfoOpen, item: $selectedItem, title: "Details", buttonTitle: "Save")
+                    }
+                })
             }
-            
-            if isInfoOpen {
-                CustomDialog(isActive: $isInfoOpen, item: $selectedItem, title: "Details", buttonTitle: "Save")
-            }
+
         }
     }
 }
