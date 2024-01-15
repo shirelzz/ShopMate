@@ -77,6 +77,7 @@ class ShoppingList: ObservableObject {
     
     static var shared = ShoppingList()
     @Published var shoppingItems: [ShoppingItem] = []
+    @Published var favShoppingItems: [ShoppingItem] = []
     private var isUserSignedIn = Auth.auth().currentUser != nil
     var timer: Timer?
 
@@ -86,6 +87,7 @@ class ShoppingList: ObservableObject {
         }
         else {
             loadShoppingItemsFromUD()
+            loadFavShoppingItemsFromUD()
         }
     }
     
@@ -102,6 +104,17 @@ class ShoppingList: ObservableObject {
                     print("Success fetching shoppingItems")
                 }
 
+
+            })
+            
+            let favPath = "users/\(userID)/favShoppingList"
+
+            DatabaseManager.shared.fetchShoppingItems(path: favPath, completion: { fetchedFavShoppingItems in
+
+                DispatchQueue.main.async {
+                    self.favShoppingItems = fetchedFavShoppingItems
+                    print("Success fetching fav shoppingItems")
+                }
 
             })
         }
@@ -123,6 +136,14 @@ class ShoppingList: ObservableObject {
         }
     }
     
+    func deleteFavItemFromDB(itemID: String) {
+        if let currentUser = Auth.auth().currentUser {
+            let userID = currentUser.uid
+            let path = "users/\(userID)/favShoppingList"
+            DatabaseManager.shared.deleteItem(itemID: itemID, path: path)
+        }
+    }
+    
     func addItem(item: ShoppingItem) {
         shoppingItems.append(item)
         if isUserSignedIn{
@@ -130,6 +151,7 @@ class ShoppingList: ObservableObject {
         }
         else{
             saveItems2UD()
+            saveFavItems2UD()
         }
     }
     
@@ -143,6 +165,16 @@ class ShoppingList: ObservableObject {
         }
     }
     
+    private func saveFavItems2UD() {
+        if let encodedData = try? JSONEncoder().encode(Array(favShoppingItems)) {
+            UserDefaults.standard.set(encodedData, forKey: "favShoppingItems")
+            print("success decoding fav shopping items! save")
+        }
+        else{
+            print("Error decoding fav shopping items save")
+        }
+    }
+    
     // load items from UserDefaults
     func loadShoppingItemsFromUD() {
         if let savedData = UserDefaults.standard.data(forKey: "shoppingItems"),
@@ -152,6 +184,17 @@ class ShoppingList: ObservableObject {
         }
         else{
             print("Error decoding shoppingItems load")
+        }
+    }
+    
+    func loadFavShoppingItemsFromUD() {
+        if let savedData = UserDefaults.standard.data(forKey: "favShoppingItems"),
+           let decodedItems = try? JSONDecoder().decode([ShoppingItem].self, from: savedData) {
+            favShoppingItems = decodedItems
+            print("success decoding fav shoppingItems! load")
+        }
+        else{
+            print("Error decoding fav shoppingItems load")
         }
     }
     
@@ -221,6 +264,20 @@ class ShoppingList: ObservableObject {
         }
     }
     
+    func removeFavItem(item: ShoppingItem) {
+        if let index = favShoppingItems.firstIndex(where: { $0.id == item.id}) {
+            print("---> Deleting fav item: \(item.name)")
+
+            favShoppingItems.remove(at: index)
+            if isUserSignedIn{
+                deleteFavItemFromDB(itemID: item.shoppingItemID)
+            }
+            else{
+                saveFavItems2UD()
+            }
+        }
+    }
+    
     func updateIsChecked(item: ShoppingItem, newState: Bool) {
         if let index = shoppingItems.firstIndex(of: item) {
             shoppingItems[index].isChecked = newState
@@ -239,12 +296,26 @@ class ShoppingList: ObservableObject {
         }
     }
     
-    func updateIsHearted(item: ShoppingItem, isHearted: Bool) {
+    func updateIsHearted(item: ShoppingItem) {
         if let index = shoppingItems.firstIndex(of: item) {
-            shoppingItems[index].isHearted = isHearted
+            shoppingItems[index].isHearted.toggle()
             
-            updateItem(index: index)
+            if shoppingItems[index].isHearted {
+                updateItem(index: index)
+            }
+            else {
+                removeFavItem(item: item)
+            }
 
+        }
+        
+        if !favShoppingItems.contains(item){
+            
+            if let currentUser = Auth.auth().currentUser {
+                let userID = currentUser.uid
+                let path = "users/\(userID)/favShoppingList"
+                DatabaseManager.shared.saveItem(item, path: path)
+            }
         }
     }
     
@@ -260,8 +331,23 @@ class ShoppingList: ObservableObject {
         if isUserSignedIn {
             if let currentUser = Auth.auth().currentUser {
                 let userID = currentUser.uid
-                let path = "users/\(userID)/shppingList/\(shoppingItems[index].shoppingItemID)"
                 
+                var folder = ""
+                
+                if shoppingItems[index].isHearted {
+                    folder = "favShoppingList"
+                    let favPath = "users/\(userID)/\(folder)/\(shoppingItems[index].shoppingItemID)"
+                    DatabaseManager.shared.updateItemInDB(shoppingItems[index], path: favPath) { success in
+                        if !success {
+                            print("updating in the database failed (update fav shopping item)")
+                        }
+                    }
+                }
+                else {
+                    folder = "shoppingList"
+                }
+                
+                let path = "users/\(userID)/shoppingList/\(shoppingItems[index].shoppingItemID)"
                 DatabaseManager.shared.updateItemInDB(shoppingItems[index], path: path) { success in
                     if !success {
                         print("updating in the database failed (update shopping item)")
@@ -274,16 +360,8 @@ class ShoppingList: ObservableObject {
     }
     
     func getFavorites() -> [ShoppingItem] {
-        
-        var favoriteItems: [ShoppingItem] = []
-        
-        for item in shoppingItems {
-            if item.isHearted {
-                favoriteItems.append(item)
-            }
-        }
-        
-        return favoriteItems
+        fetchShoppingItems()
+        return favShoppingItems
     }
 }
 

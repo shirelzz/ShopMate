@@ -18,10 +18,6 @@ class DatabaseManager {
     
     private var databaseRef = Database.database().reference()
     
-    private func usersRef() -> DatabaseReference {
-        return databaseRef.child("users")
-    }
-    
     // MARK: - Reading data
     
     func fetchShoppingItems(path: String, completion: @escaping ([ShoppingItem]) -> ()) {
@@ -69,6 +65,8 @@ class DatabaseManager {
     func saveItem(_ item: ShoppingItem, path: String) {
         let itemRef = databaseRef.child(path).child(item.id)
         itemRef.setValue(item.dictionaryRepresentation())
+        print("---> saved item")
+
     }
     
     // MARK: - Deleting data

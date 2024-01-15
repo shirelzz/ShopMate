@@ -9,11 +9,12 @@ import SwiftUI
 
 struct FavoritesView: View {
     
-    var favoriteItems: [ShoppingItem] = ShoppingList.shared.getFavorites()
+    @State private var favoriteItems: [ShoppingItem] = ShoppingList.shared.getFavorites()
     @State private var isInfoOpen = false
     @State private var addedToFavorites = true
     @State private var inputText = ""
     @State private var selectedItem: ShoppingItem = ShoppingItem()
+    @State private var selectedItem2Fav: ShoppingItem = ShoppingItem()
 
     var body: some View {
         
@@ -73,10 +74,13 @@ struct FavoritesView: View {
                         .contextMenu(ContextMenu(menuItems: {
                             
                             Button {
-                                addedToFavorites.toggle()
-                                ShoppingList.shared.updateIsHearted(item: item, isHearted: addedToFavorites)
+                                selectedItem2Fav = item
+                                if selectedItem2Fav.isHearted {
+                                    ShoppingList.shared.updateIsHearted(item: selectedItem2Fav)
+
+                                }
                             } label: {
-                                Text(addedToFavorites ? "Remove from favorites" : "Add to favorites")
+                                Text(item.isHearted ? "Remove from favorites" : "Add to favorites")
                             }
                             
                         }))
@@ -87,6 +91,9 @@ struct FavoritesView: View {
                         CustomDialog(isActive: $isInfoOpen, item: $selectedItem, title: "Details", buttonTitle: "Save")
                     }
                 })
+//                .onChange(of: ShoppingList.shared.getFavorites()) {
+//                    favoriteItems = ShoppingList.shared.getFavorites()
+//                }
             }
             .navigationTitle("Favorites")
         }

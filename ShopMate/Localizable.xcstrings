@@ -299,7 +299,14 @@
       }
     },
     "Add to favorites" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add to favorites"
+          }
+        }
+      }
     },
     "Additional Details" : {
       "extractionState" : "manual",
@@ -752,10 +759,24 @@
       }
     },
     "Enter text" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter text"
+          }
+        }
+      }
     },
     "Enter text here" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter text here"
+          }
+        }
+      }
     },
     "Export Receipts" : {
       "extractionState" : "stale",
@@ -775,7 +796,14 @@
       }
     },
     "Favorites" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorites"
+          }
+        }
+      }
     },
     "Filter" : {
       "extractionState" : "stale",
@@ -846,7 +874,14 @@
       }
     },
     "Hello" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello"
+          }
+        }
+      }
     },
     "ILS" : {
       "extractionState" : "stale",
@@ -1171,7 +1206,14 @@
       }
     },
     "Note: signing in with Google or Apple allows you to view your data through all your connected devices." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Note: signing in with Google or Apple allows you to view your data through all your connected devices."
+          }
+        }
+      }
     },
     "Notes" : {
       "extractionState" : "manual",
@@ -1725,7 +1767,14 @@
       }
     },
     "Remove from favorites" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove from favorites"
+          }
+        }
+      }
     },
     "Save" : {
       "localizations" : {
@@ -1944,7 +1993,14 @@
       }
     },
     "So good to see you 🥳" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "So good to see you 🥳"
+          }
+        }
+      }
     },
     "Sort By" : {
       "extractionState" : "stale",

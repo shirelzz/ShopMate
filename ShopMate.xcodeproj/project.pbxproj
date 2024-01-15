@@ -59,11 +59,11 @@
 		D6F7080D2B541C2400616E26 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7080C2B541C2400616E26 /* MainView.swift */; };
 		D6F708102B541D1300616E26 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7080F2B541D1300616E26 /* LaunchView.swift */; };
 		D6F708122B541DE200616E26 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F708112B541DE200616E26 /* WelcomeView.swift */; };
-		D6F708192B542CE300616E26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6F708182B542CE300616E26 /* GoogleService-Info.plist */; };
 		D6F7081C2B5468EA00616E26 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7081B2B5468EA00616E26 /* FavoritesView.swift */; };
 		D6F7081E2B5470F700616E26 /* InfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7081D2B5470F700616E26 /* InfoWindow.swift */; };
 		D6F708202B54938400616E26 /* InfoOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7081F2B54938400616E26 /* InfoOverlay.swift */; };
 		D6F708222B549F0700616E26 /* CustomDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F708212B549F0700616E26 /* CustomDialog.swift */; };
+		D6F7082A2B556B6E00616E26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6F708292B556B6E00616E26 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,11 +94,11 @@
 		D6F7080F2B541D1300616E26 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		D6F708112B541DE200616E26 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		D6F708152B54215600616E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		D6F708182B542CE300616E26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D6F7081B2B5468EA00616E26 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		D6F7081D2B5470F700616E26 /* InfoWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWindow.swift; sourceTree = "<group>"; };
 		D6F7081F2B54938400616E26 /* InfoOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoOverlay.swift; sourceTree = "<group>"; };
 		D6F708212B549F0700616E26 /* CustomDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDialog.swift; sourceTree = "<group>"; };
+		D6F708292B556B6E00616E26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +159,7 @@
 		D6E9A7762B54121F007D138C /* ShopMate */ = {
 			isa = PBXGroup;
 			children = (
+				D6F708292B556B6E00616E26 /* GoogleService-Info.plist */,
 				D6E9A7772B54121F007D138C /* ShopMateApp.swift */,
 				D6F7081B2B5468EA00616E26 /* FavoritesView.swift */,
 				D6E9A7852B541292007D138C /* AccountView.swift */,
@@ -169,7 +170,6 @@
 				D6E9A7932B5412F6007D138C /* Utils */,
 				D6F708262B553AB100616E26 /* CustomViews */,
 				D6F708252B553A8400616E26 /* MainViews */,
-				D6F708182B542CE300616E26 /* GoogleService-Info.plist */,
 				D6F708152B54215600616E26 /* Info.plist */,
 				D6E9A7A82B541328007D138C /* ShopMate.entitlements */,
 				D6E9A7892B5412BC007D138C /* Localizable.xcstrings */,
@@ -336,9 +336,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6E9A77F2B541220007D138C /* Preview Assets.xcassets in Resources */,
+				D6F7082A2B556B6E00616E26 /* GoogleService-Info.plist in Resources */,
 				D6E9A77C2B541220007D138C /* Assets.xcassets in Resources */,
 				D6E9A78A2B5412BC007D138C /* Localizable.xcstrings in Resources */,
-				D6F708192B542CE300616E26 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

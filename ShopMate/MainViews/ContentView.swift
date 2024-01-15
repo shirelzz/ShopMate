@@ -17,8 +17,13 @@ struct ContentView: View {
     
     @State private var inputText = ""
     @State private var selectedItem: ShoppingItem = ShoppingItem()
+    @State private var selectedItem2Fav: ShoppingItem = ShoppingItem()
+    @State private var selectedItem2Delete: ShoppingItem = ShoppingItem()
     @State private var addedToFavorites = false
     @State private var addFavoritesItemsPressed = false
+    
+    @State private var updatefavorites = false
+
     @State private var flag = false
     @State private var selectedItem2Check: ShoppingItem = ShoppingItem()
 
@@ -151,6 +156,11 @@ struct ContentView: View {
                             
                             Text(item.name)
                             
+                            if item.isHearted {
+                                Image(systemName: "heart.fill")
+                                    .font(.system(size: 12))
+                            }
+                            
                             Spacer()
                             
                             
@@ -182,16 +192,19 @@ struct ContentView: View {
                             
                         }
                         .contextMenu(ContextMenu(menuItems: {
+
                             
                             Button {
-                                addedToFavorites.toggle()
-                                ShoppingList.shared.updateIsHearted(item: item, isHearted: addedToFavorites)
+                                selectedItem2Fav = item
+                                ShoppingList.shared.updateIsHearted(item: selectedItem2Fav)
+                                updatefavorites.toggle()
                             } label: {
-                                Text(addedToFavorites ? "Remove from favorites" : "Add to favorites")
+                                Text(item.isHearted ? "Remove from favorites" : "Add to favorites")
                             }
                             
                             Button {
-                                ShoppingList.shared.deleteItem(item: item)
+                                selectedItem2Delete = item
+                                ShoppingList.shared.deleteItem(item: selectedItem2Delete)
                             } label: {
                                 Text("Delete")
                                     .foregroundColor(.red)
@@ -239,16 +252,19 @@ struct ContentView: View {
             .onAppear {
                 items = shoppingList.shoppingItems
             }
-            .onChange(of: shoppingList.shoppingItems, {
-                
-                if addFavoritesItemsPressed {
-                    items = shoppingList.shoppingItems + shoppingList.getFavorites()
-                    items = Array(Set(items))
-                }
-                else {
-                    items = shoppingList.shoppingItems
-                }
-            })
+//            .onChange(of: shoppingList.shoppingItems, {
+//                
+//                if addFavoritesItemsPressed {
+//                    items = shoppingList.shoppingItems + shoppingList.getFavorites()
+//                    items = Array(Set(items))
+//                }
+//                else {
+//                    items = shoppingList.shoppingItems
+//                }
+//            })
+//            .onChange(of: updatefavorites, {
+//                items = shoppingList.shoppingItems
+//            })
             .navigationTitle("Hello")
             
             AdBannerView(adUnitID: "ca-app-pub-3940256099942544/2934735716")

@@ -30,6 +30,8 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:912940296703:ios:f637b2ed4afaeb4f70dfca</string>
+	<key>DATABASE_URL</key>
+	<string>https://shopmate-5cd5a-default-rtdb.europe-west1.firebasedatabase.app</string>
 	<key>ADMOB_APP_ID</key>
 	<string>ca-app-pub-1213016211458907~2360637083</string>
 </dict>
