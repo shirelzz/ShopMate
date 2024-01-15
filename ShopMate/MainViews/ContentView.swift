@@ -18,6 +18,12 @@ struct ContentView: View {
     @State private var inputText = ""
     @State private var selectedItem: ShoppingItem = ShoppingItem()
     @State private var addedToFavorites = false
+    @State private var addFavoritesItemsPressed = false
+    @State private var flag = false
+    @State private var selectedItem2Check: ShoppingItem = ShoppingItem()
+
+    @State private var items: [ShoppingItem] = []
+    
     
     var body: some View {
         
@@ -38,22 +44,36 @@ struct ContentView: View {
                             .resizable()
                             .scaledToFill()
                             .edgesIgnoringSafeArea(.top)
-                            .opacity(0.4)
+                            .opacity(0.3)
                             .frame(height: 20)
                         
                         HStack {
                             
-                            //                            Spacer()
-                            
-                            Text("   Hello User")
-                                .font(.largeTitle)
-                                .bold()
-                            //                                .padding(.leading)
-                            
                             Spacer(minLength: 10)
                             
+                            Button(action: {
+                                addFavoritesItemsPressed.toggle()
+                                
+                            }, label: {
+                                Image(systemName: addFavoritesItemsPressed ? "heart.circle.fill" : "heart.circle")
+                                    .foregroundColor(addFavoritesItemsPressed ? .accentColor : .black)
+                                    .font(.system(size: 36))
+//                                    .padding()
+                            })
+                            .onChange(of: addFavoritesItemsPressed) {
+                                if addFavoritesItemsPressed {
+                                    items = shoppingList.shoppingItems + shoppingList.getFavorites()
+                                    items = Array(Set(items))
+                                }
+                                else {
+                                    items = shoppingList.shoppingItems
+                                }
+                            }
+                            .buttonStyle(.borderless)
+                            .padding()
+                                                        
                         }
-                        .padding(.top, 45)
+//                        .padding(.top, 45)
                         
                     }
                 }
@@ -70,6 +90,7 @@ struct ContentView: View {
                             .onChange(of: newItemName) { _ in
                                 validateName()
                             }
+                        
                         TextField("Quantity", text: $newItemQuantity)
                             .keyboardType(.numberPad)
                         
@@ -92,6 +113,7 @@ struct ContentView: View {
                             
                         }, label: {
                             Text("Add")
+                                .buttonBorderShape(.roundedRectangle)
                         })
                         .disabled(!isNameValid)
                         .buttonStyle(.borderedProminent)
@@ -100,15 +122,32 @@ struct ContentView: View {
                 
                 Section(header: Text("Shopping List")) {
                     
-                    ForEach(shoppingList.shoppingItems) { item in
+                    ForEach(items) { item in
                         
                         HStack {
-                            Image(systemName: item.isChecked ? "checkmark.circle.fill" : "circle")
-                                .foregroundColor(item.isChecked ? .accentColor : .black)
-                                .onTapGesture {
-                                    shoppingList.toggleCheck(item: item)
-                                    
-                                }
+                            
+                            Button {
+                                selectedItem2Check = item
+//                                selectedItem.isChecked.toggle()
+                                flag = shoppingList.toggleCheck(item: selectedItem2Check)
+                            } label: {
+                                Image(systemName: item.isChecked ? "checkmark.circle.fill" : "circle")
+                                    .foregroundColor(item.isChecked ? .accentColor : .black)
+                            }
+                            
+//                            Button {
+//                                selectedItem2Check.isChecked.toggle()
+//                                selectedItem2Check = item
+//
+//                            } label: {
+//                                Image(systemName: selectedItem2Check.isChecked ? "checkmark.circle.fill" : "circle")
+//                                    .foregroundColor(selectedItem2Check.isChecked ? .accentColor : .black)
+//                            }
+//                            .onChange(of: selectedItem2Check.isChecked) {
+//                                shoppingList.toggleCheck(item: item)
+//                            }
+//                            .buttonStyle(.bordered)
+
                             
                             Text(item.name)
                             
@@ -151,6 +190,13 @@ struct ContentView: View {
                                 Text(addedToFavorites ? "Remove from favorites" : "Add to favorites")
                             }
                             
+                            Button {
+                                ShoppingList.shared.deleteItem(item: item)
+                            } label: {
+                                Text("Delete")
+                                    .foregroundColor(.red)
+                            }
+                            
                         }))
                                                 
                     }
@@ -175,17 +221,39 @@ struct ContentView: View {
                             }
                         }
                         
-                        //                        HStack {
-                        //                            NavigationLink(destination: SettingsView()) {
-                        //                                Label("Settings", systemImage: "gear")
-                        //                            }
-                        //                        }
+                        HStack {
+                            NavigationLink(destination: SettingsView()) {
+                                Label("Settings", systemImage: "gear")
+                            }
+                        }
                         
                     } label: {
                         Image(systemName: "line.horizontal.3")
+                            .resizable()
+                            .font(.system(size: 22))
+                            .shadow(color: .black.opacity(0.3) ,radius: 6)
+                            
                     }
                 }
             }
+            .onAppear {
+                items = shoppingList.shoppingItems
+            }
+            .onChange(of: shoppingList.shoppingItems, {
+                
+                if addFavoritesItemsPressed {
+                    items = shoppingList.shoppingItems + shoppingList.getFavorites()
+                    items = Array(Set(items))
+                }
+                else {
+                    items = shoppingList.shoppingItems
+                }
+            })
+            .navigationTitle("Hello")
+            
+            AdBannerView(adUnitID: "ca-app-pub-3940256099942544/2934735716")
+                .frame(height: 50)
+                .background(Color.white)
             
             // here
         }

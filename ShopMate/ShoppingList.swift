@@ -155,23 +155,53 @@ class ShoppingList: ObservableObject {
         }
     }
     
-    func toggleCheck(item: ShoppingItem) {
+//    func toggleCheck(item: ShoppingItem) {
+//        if let index = shoppingItems.firstIndex(where: { $0.id == item.id }) {
+//            shoppingItems[index].isChecked.toggle()
+//            print("--->Item checked: \(shoppingItems[index].isChecked)")
+//            updateIsChecked(item: item, newState: shoppingItems[index].isChecked)
+//        }
+//        
+//        if item.isChecked {
+//            timer?.invalidate()
+//            timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { [weak self] _ in
+//                self?.deleteItem(item: item)
+//            }
+//            print("--->Timer started")
+//        }
+//        
+//    }
+    
+    func toggleCheck(item: ShoppingItem) -> Bool {
+        var isChecked = false
         if let index = shoppingItems.firstIndex(where: { $0.id == item.id }) {
             shoppingItems[index].isChecked.toggle()
-            print("--->Item checked: \(shoppingItems[index].isChecked)")
+            isChecked = shoppingItems[index].isChecked
             updateIsChecked(item: item, newState: shoppingItems[index].isChecked)
         }
         
-        if item.isChecked {
+//        updateIsChecked(item: item, newState: item.isChecked)
+        print("---> item isChecked: \(item.isChecked.description)")
+
+        if isChecked { //
+            // Invalidate any existing timer to avoid multiple deletions
             timer?.invalidate()
-            timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { [weak self] _ in
-                self?.deleteItem(item: item)
+
+            // Create a new timer to delete the item after 5 seconds
+            timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { [weak self] timer in
+                // Use a strong reference to self within the closure
+                guard let self = self else { return }
+                self.deleteItem(item: item)
+                self.timer = nil  // Clear the timer reference
             }
-            print("--->Timer started")
+        } else {
+            // If the item is unchecked, invalidate the timer to prevent deletion
+            timer?.invalidate()
+            timer = nil  // Clear the timer reference
         }
         
+        return isChecked
     }
-
     
     func deleteItem(item: ShoppingItem) {
 //        if let index = shoppingItems.firstIndex(of: item) {

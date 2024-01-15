@@ -32,10 +32,10 @@ struct AccountView: View {
                             print("sign out pressed")
                             do {
                                 try Auth.auth().signOut()
-                                print("---> here 0")
                                 authState.isAuthenticated = false
                                 
                             } catch {
+                                Toast.showToast(message: "error signing out")
                                 print("Error signing out: \(error.localizedDescription)")
                             }
                         }

@@ -159,27 +159,22 @@
 		D6E9A7762B54121F007D138C /* ShopMate */ = {
 			isa = PBXGroup;
 			children = (
+				D6E9A7772B54121F007D138C /* ShopMateApp.swift */,
+				D6F7081B2B5468EA00616E26 /* FavoritesView.swift */,
+				D6E9A7852B541292007D138C /* AccountView.swift */,
+				D6E9A78F2B5412DA007D138C /* ShoppingListView.swift */,
+				D6E9A78D2B5412D5007D138C /* ShoppingList.swift */,
+				D6E9A78B2B5412CC007D138C /* SettingsView.swift */,
+				D6E9A7872B5412B6007D138C /* DatabaseManager.swift */,
+				D6E9A7932B5412F6007D138C /* Utils */,
+				D6F708262B553AB100616E26 /* CustomViews */,
+				D6F708252B553A8400616E26 /* MainViews */,
 				D6F708182B542CE300616E26 /* GoogleService-Info.plist */,
 				D6F708152B54215600616E26 /* Info.plist */,
-				D6E9A7932B5412F6007D138C /* Utils */,
 				D6E9A7A82B541328007D138C /* ShopMate.entitlements */,
-				D6E9A78F2B5412DA007D138C /* ShoppingListView.swift */,
-				D6E9A78B2B5412CC007D138C /* SettingsView.swift */,
-				D6E9A78D2B5412D5007D138C /* ShoppingList.swift */,
-				D6E9A7872B5412B6007D138C /* DatabaseManager.swift */,
 				D6E9A7892B5412BC007D138C /* Localizable.xcstrings */,
-				D6E9A7852B541292007D138C /* AccountView.swift */,
-				D6E9A7772B54121F007D138C /* ShopMateApp.swift */,
-				D6E9A7792B54121F007D138C /* ContentView.swift */,
 				D6E9A77B2B541220007D138C /* Assets.xcassets */,
 				D6E9A77D2B541220007D138C /* Preview Content */,
-				D6F7080C2B541C2400616E26 /* MainView.swift */,
-				D6F7080F2B541D1300616E26 /* LaunchView.swift */,
-				D6F708112B541DE200616E26 /* WelcomeView.swift */,
-				D6F7081B2B5468EA00616E26 /* FavoritesView.swift */,
-				D6F7081D2B5470F700616E26 /* InfoWindow.swift */,
-				D6F7081F2B54938400616E26 /* InfoOverlay.swift */,
-				D6F708212B549F0700616E26 /* CustomDialog.swift */,
 			);
 			path = ShopMate;
 			sourceTree = "<group>";
@@ -224,6 +219,27 @@
 				D6E9A79D2B5412F6007D138C /* AppleButtonView.swift */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		D6F708252B553A8400616E26 /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				D6F7080F2B541D1300616E26 /* LaunchView.swift */,
+				D6F7080C2B541C2400616E26 /* MainView.swift */,
+				D6F708112B541DE200616E26 /* WelcomeView.swift */,
+				D6E9A7792B54121F007D138C /* ContentView.swift */,
+			);
+			path = MainViews;
+			sourceTree = "<group>";
+		};
+		D6F708262B553AB100616E26 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				D6F7081D2B5470F700616E26 /* InfoWindow.swift */,
+				D6F7081F2B54938400616E26 /* InfoOverlay.swift */,
+				D6F708212B549F0700616E26 /* CustomDialog.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

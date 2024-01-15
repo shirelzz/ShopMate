@@ -18,9 +18,6 @@
         }
       }
     },
-    "   Hello User" : {
-
-    },
     " %lld" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -37,9 +34,6 @@
           }
         }
       }
-    },
-    " Favorites" : {
-
     },
     " Price: $" : {
       "extractionState" : "manual",
@@ -657,7 +651,6 @@
       }
     },
     "Delete" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -851,6 +844,9 @@
           }
         }
       }
+    },
+    "Hello" : {
+
     },
     "ILS" : {
       "extractionState" : "stale",

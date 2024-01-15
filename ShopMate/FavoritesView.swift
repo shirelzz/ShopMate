@@ -32,19 +32,19 @@ struct FavoritesView: View {
                         .opacity(0.4)
                         .frame(height: 20)
                     
-                    HStack {
-                        
-                        //                            Spacer()
-                        
-                        Text(" Favorites")
-                            .font(.largeTitle)
-                            .bold()
-                        //                                .padding(.leading)
-                        
-                        Spacer(minLength: 10)
-                        
-                    }
-                    .padding(.top, 45)
+//                    HStack {
+//                        
+//                        //                            Spacer()
+//                        
+//                        Text(" Favorites")
+//                            .font(.largeTitle)
+//                            .bold()
+//                        //                                .padding(.leading)
+//                        
+//                        Spacer(minLength: 10)
+//                        
+//                    }
+//                    .padding(.top, 45)
                     
                 }
                 
@@ -88,7 +88,7 @@ struct FavoritesView: View {
                     }
                 })
             }
-
+            .navigationTitle("Favorites")
         }
     }
 }

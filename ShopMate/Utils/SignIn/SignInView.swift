@@ -33,26 +33,16 @@ struct SignInView: View {
                 
                 GoogleSiginBtn {
                     
-                    print("---> User pressed")
-
-                    
                     AuthService.share.signinWithGoogle(presenting: getRootViewController(), authState: authState) { error in
                         // TODO: Handle ERROR
                         if error != nil {
                             Toast.showToast(message: "error signing you in")
-                            print("---> User is not signed in")
                         }
                         else {
-                            print("---> User is signed in with google")
                             authState.isAuthenticated = true
                             presentationMode.wrappedValue.dismiss()
                         }
                     }
-                    
-//                    if authState.isAuthenticated {
-//                        print("---> User signed in")
-//                        presentationMode.wrappedValue.dismiss()
-//                    }
                 
                 }
                 .frame(minWidth: 0 , maxWidth: .infinity)
@@ -60,13 +50,10 @@ struct SignInView: View {
                 .padding()
                 .onChange(of: authState.isAuthenticated) { isAuthenticated in
                     if isAuthenticated {
-                        print("---> here 1")
                         presentationMode.wrappedValue.dismiss()
                     }
                 }
                 
-                
-
                 Text("or")
                     .foregroundColor(.gray)
                     .padding()
@@ -77,6 +64,7 @@ struct SignInView: View {
                     DispatchQueue.main.async {
                         authState.isAuthenticated = true
                     }
+                    
                 } label: {
                     AppleButtonView()
                         .frame(minWidth: 0, maxWidth: .infinity)
@@ -87,39 +75,14 @@ struct SignInView: View {
                 }
                 .onChange(of: authState.isAuthenticated) { isAuthenticated in
                     if isAuthenticated {
-                        print("---> here 1")
                         presentationMode.wrappedValue.dismiss()
                     }
                 }
-                
-//                Button {} label: {
-//                    AppleButtonView()
-//                        .frame(width: 250, height: 50)
-//                }
-//                .padding()
-                
-//                SignInWithAppleButton(.signIn) { request in
-//                    request.reqestedScopes = [.fullName, .email]
-//                } onCompletion: { result in
-//                    switch result {
-//                        case .success(let authResults):
-//                            print("Authorisation successful")
-//                        case .error(let error):
-//                            print("Authorisation failed: \(error.localizedDescription)")
-//                    }
-//                }
-//                // black button
-//                .signInWithAppleButtonStyle(.black)
 
                 Spacer()
             }
             .navigationTitle("Sign In")
-            .onDisappear {
-                print("---> SignInView disappeared")
-            }
-            .onAppear {
-                print("---> SignInView appeared")
-            }
+            
         }
     }
 }
