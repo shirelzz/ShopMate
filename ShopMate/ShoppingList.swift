@@ -80,10 +80,11 @@ class ShoppingList: ObservableObject {
     @Published var favShoppingItems: [ShoppingItem] = []
     private var isUserSignedIn = Auth.auth().currentUser != nil
     var timer: Timer?
-
+    
     init() {
         if isUserSignedIn{
             fetchShoppingItems()
+            fetchFavShoppingItems()
         }
         else {
             loadShoppingItemsFromUD()
@@ -96,26 +97,31 @@ class ShoppingList: ObservableObject {
             let userID = currentUser.uid
             print("Current UserID: \(userID)")
             let path = "users/\(userID)/shoppingList"
-
             DatabaseManager.shared.fetchShoppingItems(path: path, completion: { fetchedShoppingItems in
-
+                
                 DispatchQueue.main.async {
                     self.shoppingItems = fetchedShoppingItems
                     print("Success fetching shoppingItems")
                 }
-
-
+                
             })
             
+        }
+    }
+    
+    func fetchFavShoppingItems() {
+        if let currentUser = Auth.auth().currentUser {
+            let userID = currentUser.uid
+            print("Current UserID: \(userID)")
             let favPath = "users/\(userID)/favShoppingList"
-
+            
             DatabaseManager.shared.fetchShoppingItems(path: favPath, completion: { fetchedFavShoppingItems in
-
+                
                 DispatchQueue.main.async {
                     self.favShoppingItems = fetchedFavShoppingItems
                     print("Success fetching fav shoppingItems")
                 }
-
+                
             })
         }
     }
@@ -124,6 +130,14 @@ class ShoppingList: ObservableObject {
         if let currentUser = Auth.auth().currentUser {
             let userID = currentUser.uid
             let path = "users/\(userID)/shoppingList"
+            DatabaseManager.shared.saveItem(item, path: path)
+        }
+    }
+    
+    func saveFavItem2DB(_ item: ShoppingItem) {
+        if let currentUser = Auth.auth().currentUser {
+            let userID = currentUser.uid
+            let path = "users/\(userID)/favShoppingList"
             DatabaseManager.shared.saveItem(item, path: path)
         }
     }
@@ -151,6 +165,15 @@ class ShoppingList: ObservableObject {
         }
         else{
             saveItems2UD()
+        }
+    }
+    
+    func saveFavItem(item: ShoppingItem) {
+        favShoppingItems.append(item)
+        if isUserSignedIn{
+            saveFavItem2DB(item)
+        }
+        else{
             saveFavItems2UD()
         }
     }
@@ -198,40 +221,25 @@ class ShoppingList: ObservableObject {
         }
     }
     
-//    func toggleCheck(item: ShoppingItem) {
-//        if let index = shoppingItems.firstIndex(where: { $0.id == item.id }) {
-//            shoppingItems[index].isChecked.toggle()
-//            print("--->Item checked: \(shoppingItems[index].isChecked)")
-//            updateIsChecked(item: item, newState: shoppingItems[index].isChecked)
-//        }
-//        
-//        if item.isChecked {
-//            timer?.invalidate()
-//            timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { [weak self] _ in
-//                self?.deleteItem(item: item)
-//            }
-//            print("--->Timer started")
-//        }
-//        
-//    }
-    
-    func toggleCheck(item: ShoppingItem) -> Bool {
+    func toggleCheck(item: ShoppingItem) {
         var isChecked = false
         if let index = shoppingItems.firstIndex(where: { $0.id == item.id }) {
             shoppingItems[index].isChecked.toggle()
             isChecked = shoppingItems[index].isChecked
-            updateIsChecked(item: item, newState: shoppingItems[index].isChecked)
+            updateIsChecked(item: item, newState: isChecked)
+            
+            print("--- 0 ischecked: \(isChecked)")
+            print("--- 0 item ischecked: \(item.isChecked.description)")
+            print("--- 0 shoppingItems[index] ischecked: \(shoppingItems[index].isChecked.description)")
+
         }
-        
-//        updateIsChecked(item: item, newState: item.isChecked)
-        print("---> item isChecked: \(item.isChecked.description)")
 
         if isChecked { //
             // Invalidate any existing timer to avoid multiple deletions
             timer?.invalidate()
-
-            // Create a new timer to delete the item after 5 seconds
-            timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { [weak self] timer in
+            
+            // Create a new timer to delete the item after 4 seconds
+            timer = Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { [weak self] timer in
                 // Use a strong reference to self within the closure
                 guard let self = self else { return }
                 self.deleteItem(item: item)
@@ -242,15 +250,13 @@ class ShoppingList: ObservableObject {
             timer?.invalidate()
             timer = nil  // Clear the timer reference
         }
-        
-        return isChecked
     }
     
     func deleteItem(item: ShoppingItem) {
-//        if let index = shoppingItems.firstIndex(of: item) {
-        if let index = shoppingItems.firstIndex(where: { $0.id == item.id && $0.isChecked }) {
+        //        if let index = shoppingItems.firstIndex(of: item) {
+        if let index = shoppingItems.firstIndex(where: { $0.id == item.id}) { //&& $0.isChecked
             print("--->Deleting item: \(item.name)")
-
+            
             shoppingItems.remove(at: index)
             if isUserSignedIn{
                 deleteItemFromDB(itemID: item.shoppingItemID)
@@ -267,7 +273,7 @@ class ShoppingList: ObservableObject {
     func removeFavItem(item: ShoppingItem) {
         if let index = favShoppingItems.firstIndex(where: { $0.id == item.id}) {
             print("---> Deleting fav item: \(item.name)")
-
+            
             favShoppingItems.remove(at: index)
             if isUserSignedIn{
                 deleteFavItemFromDB(itemID: item.shoppingItemID)
@@ -279,12 +285,16 @@ class ShoppingList: ObservableObject {
     }
     
     func updateIsChecked(item: ShoppingItem, newState: Bool) {
-        if let index = shoppingItems.firstIndex(of: item) {
-            shoppingItems[index].isChecked = newState
-            
-            updateItem(index: index)
+        if let index = shoppingItems.firstIndex(where: { $0.id == item.id }) {
 
+//        if let index = shoppingItems.firstIndex(of: item) {
+            shoppingItems[index].isChecked = newState
+            print("--- 2 shoppingItems[index] ischecked: \(shoppingItems[index].isChecked.description)")
+            updateItem(index: index)
+            
         }
+        print("--- 2")
+
     }
     
     func updateNotes(item: ShoppingItem, notes: String) {
@@ -292,7 +302,7 @@ class ShoppingList: ObservableObject {
             shoppingItems[index].notes = notes
             
             updateItem(index: index)
-
+            
         }
     }
     
@@ -300,22 +310,18 @@ class ShoppingList: ObservableObject {
         if let index = shoppingItems.firstIndex(of: item) {
             shoppingItems[index].isHearted.toggle()
             
-            if shoppingItems[index].isHearted {
-                updateItem(index: index)
+            if shoppingItems[index].isHearted {                
+                // add to favorits list
+                if !favShoppingItems.contains(item){
+                    saveFavItem(item: shoppingItems[index])
+                }
             }
             else {
                 removeFavItem(item: item)
             }
+            // update generic list
+            updateItem(index: index)
 
-        }
-        
-        if !favShoppingItems.contains(item){
-            
-            if let currentUser = Auth.auth().currentUser {
-                let userID = currentUser.uid
-                let path = "users/\(userID)/favShoppingList"
-                DatabaseManager.shared.saveItem(item, path: path)
-            }
         }
     }
     
@@ -328,25 +334,11 @@ class ShoppingList: ObservableObject {
     }
     
     private func updateItem(index: Array<ShoppingItem>.Index) {
+        print("--- 1 shoppingItems[index] ischecked: \(shoppingItems[index].isChecked.description)")
+
         if isUserSignedIn {
             if let currentUser = Auth.auth().currentUser {
                 let userID = currentUser.uid
-                
-                var folder = ""
-                
-                if shoppingItems[index].isHearted {
-                    folder = "favShoppingList"
-                    let favPath = "users/\(userID)/\(folder)/\(shoppingItems[index].shoppingItemID)"
-                    DatabaseManager.shared.updateItemInDB(shoppingItems[index], path: favPath) { success in
-                        if !success {
-                            print("updating in the database failed (update fav shopping item)")
-                        }
-                    }
-                }
-                else {
-                    folder = "shoppingList"
-                }
-                
                 let path = "users/\(userID)/shoppingList/\(shoppingItems[index].shoppingItemID)"
                 DatabaseManager.shared.updateItemInDB(shoppingItems[index], path: path) { success in
                     if !success {
@@ -359,9 +351,31 @@ class ShoppingList: ObservableObject {
         }
     }
     
+//    private func updateFavItem(index: Array<ShoppingItem>.Index) {
+//        if isUserSignedIn {
+//            if let currentUser = Auth.auth().currentUser {
+//                let userID = currentUser.uid
+//                
+//                let favPath = "users/\(userID)/favShoppingList/\(shoppingItems[index].shoppingItemID)"
+//                DatabaseManager.shared.updateItemInDB(shoppingItems[index], path: favPath) { success in
+//                    if !success {
+//                        print("updating in the database failed (update fav shopping item)")
+//                    }
+//                }
+//            }
+//        } else {
+//            saveFavItems2UD()
+//        }
+//    }
+    
     func getFavorites() -> [ShoppingItem] {
         fetchShoppingItems()
-        return favShoppingItems
+        return favShoppingItems.sorted(by: { $0.name < $1.name })
     }
+    
+    func getSortedItemsByName() -> [ShoppingItem] {
+        return shoppingItems.sorted(by: { $0.name < $1.name })
+    }
+    
 }
 

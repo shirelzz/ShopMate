@@ -1120,6 +1120,9 @@
         }
       }
     },
+    "No favorite items yet" : {
+
+    },
     "No inventory items yet" : {
       "extractionState" : "stale",
       "localizations" : {

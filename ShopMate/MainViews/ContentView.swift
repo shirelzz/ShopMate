@@ -9,26 +9,25 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @StateObject private var shoppingList = ShoppingList.shared
+//    @StateObject private var shoppingList = ShoppingList.shared //StateObject
+    @State private var items: [ShoppingItem] = ShoppingList.shared.getSortedItemsByName()
     @State private var newItemName = ""
     @State private var newItemQuantity = ""
     @State private var isNameValid = true
     @State private var isInfoOverlayPresented = false
-    
     @State private var inputText = ""
     @State private var selectedItem: ShoppingItem = ShoppingItem()
     @State private var selectedItem2Fav: ShoppingItem = ShoppingItem()
     @State private var selectedItem2Delete: ShoppingItem = ShoppingItem()
     @State private var addedToFavorites = false
     @State private var addFavoritesItemsPressed = false
-    
     @State private var updatefavorites = false
-
     @State private var flag = false
     @State private var selectedItem2Check: ShoppingItem = ShoppingItem()
-
-    @State private var items: [ShoppingItem] = []
     
+    init(){
+        items = ShoppingList.shared.getSortedItemsByName()
+    }
     
     var body: some View {
         
@@ -67,11 +66,11 @@ struct ContentView: View {
                             })
                             .onChange(of: addFavoritesItemsPressed) {
                                 if addFavoritesItemsPressed {
-                                    items = shoppingList.shoppingItems + shoppingList.getFavorites()
+                                    items = ShoppingList.shared.getSortedItemsByName() + ShoppingList.shared.getFavorites()
                                     items = Array(Set(items))
                                 }
                                 else {
-                                    items = shoppingList.shoppingItems
+                                    items = ShoppingList.shared.shoppingItems
                                 }
                             }
                             .buttonStyle(.borderless)
@@ -127,32 +126,18 @@ struct ContentView: View {
                 
                 Section(header: Text("Shopping List")) {
                     
-                    ForEach(items) { item in
+                    ForEach(ShoppingList.shared.getSortedItemsByName()) { item in
                         
                         HStack {
                             
                             Button {
                                 selectedItem2Check = item
-//                                selectedItem.isChecked.toggle()
-                                flag = shoppingList.toggleCheck(item: selectedItem2Check)
+                                ShoppingList.shared.toggleCheck(item: selectedItem2Check)
+                                print("--- finished")
                             } label: {
                                 Image(systemName: item.isChecked ? "checkmark.circle.fill" : "circle")
                                     .foregroundColor(item.isChecked ? .accentColor : .black)
                             }
-                            
-//                            Button {
-//                                selectedItem2Check.isChecked.toggle()
-//                                selectedItem2Check = item
-//
-//                            } label: {
-//                                Image(systemName: selectedItem2Check.isChecked ? "checkmark.circle.fill" : "circle")
-//                                    .foregroundColor(selectedItem2Check.isChecked ? .accentColor : .black)
-//                            }
-//                            .onChange(of: selectedItem2Check.isChecked) {
-//                                shoppingList.toggleCheck(item: item)
-//                            }
-//                            .buttonStyle(.bordered)
-
                             
                             Text(item.name)
                             
@@ -186,9 +171,6 @@ struct ContentView: View {
                                 Image(systemName: "info.circle")
                             }
                             .buttonStyle(.borderless)
-//                            .buttonStyle(.bordered)
-//                            .buttonBorderShape(.circle)
-//                            .cornerRadius(10)
                             
                         }
                         .contextMenu(ContextMenu(menuItems: {
@@ -197,7 +179,6 @@ struct ContentView: View {
                             Button {
                                 selectedItem2Fav = item
                                 ShoppingList.shared.updateIsHearted(item: selectedItem2Fav)
-                                updatefavorites.toggle()
                             } label: {
                                 Text(item.isHearted ? "Remove from favorites" : "Add to favorites")
                             }
@@ -249,29 +230,12 @@ struct ContentView: View {
                     }
                 }
             }
-            .onAppear {
-                items = shoppingList.shoppingItems
-            }
-//            .onChange(of: shoppingList.shoppingItems, {
-//                
-//                if addFavoritesItemsPressed {
-//                    items = shoppingList.shoppingItems + shoppingList.getFavorites()
-//                    items = Array(Set(items))
-//                }
-//                else {
-//                    items = shoppingList.shoppingItems
-//                }
-//            })
-//            .onChange(of: updatefavorites, {
-//                items = shoppingList.shoppingItems
-//            })
             .navigationTitle("Hello")
             
             AdBannerView(adUnitID: "ca-app-pub-3940256099942544/2934735716")
                 .frame(height: 50)
                 .background(Color.white)
-            
-            // here
+
         }
         
         

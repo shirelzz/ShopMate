@@ -42,11 +42,13 @@ struct ShopMateApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     @StateObject private var authState = AuthState()
-    
+    @StateObject private var shoppingList = ShoppingList.shared
+
     var body: some Scene {
         WindowGroup {
             MainView()
                 .environmentObject(authState)
+                .environmentObject(shoppingList)
                 .onAppear {
                     // Ensure Firebase is configured only once
                     if FirebaseApp.app() == nil {

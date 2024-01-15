@@ -50,6 +50,11 @@ struct FavoritesView: View {
                 }
                 
                 List {
+                    
+                    if favoriteItems.isEmpty {
+                        
+                        Text("No favorite items yet")
+                    }
 
                     ForEach(favoriteItems) { item in
                         
