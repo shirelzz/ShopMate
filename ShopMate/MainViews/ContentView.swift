@@ -9,8 +9,10 @@ import SwiftUI
 
 
 struct ContentView: View {
-//    @StateObject private var shoppingList = ShoppingList.shared //StateObject
-    @State private var items: [ShoppingItem] = ShoppingList.shared.getSortedItemsByName()
+    @StateObject private var shoppingList = ShoppingList.shared
+//    @ObservedObject var shoppingList = ShoppingList.shared
+//    @State private var items: [ShoppingItem] = ShoppingList.shared.getSortedItemsByName()
+//    @State private var favItems: [ShoppingItem] = ShoppingList.shared.getFavorites()
     @State private var newItemName = ""
     @State private var newItemQuantity = ""
     @State private var isNameValid = true
@@ -19,14 +21,14 @@ struct ContentView: View {
     @State private var selectedItem: ShoppingItem = ShoppingItem()
     @State private var selectedItem2Fav: ShoppingItem = ShoppingItem()
     @State private var selectedItem2Delete: ShoppingItem = ShoppingItem()
-    @State private var addedToFavorites = false
     @State private var addFavoritesItemsPressed = false
     @State private var updatefavorites = false
     @State private var flag = false
     @State private var selectedItem2Check: ShoppingItem = ShoppingItem()
     
     init(){
-        items = ShoppingList.shared.getSortedItemsByName()
+//        items = ShoppingList.shared.getSortedItemsByName()
+//        favItems = ShoppingList.shared.getFavorites()
     }
     
     var body: some View {
@@ -36,7 +38,6 @@ struct ContentView: View {
         NavigationStack{
                         
             ZStack(alignment: .topTrailing) {
-               
                 //                AppOpenAdView(adUnitID: "ca-app-pub-3940256099942544/5575463023")
                 // test:  ca-app-pub-3940256099942544/5575463023
                 
@@ -58,42 +59,35 @@ struct ContentView: View {
                             Button(action: {
                                 addFavoritesItemsPressed.toggle()
                                 
+                                if addFavoritesItemsPressed && !flag {
+                                    shoppingList.addFavItemsInList()
+                                    flag = true
+                                }
+                                
+                                ShoppingList.shared.updateFavItemsInList(add: addFavoritesItemsPressed)
+                                
                             }, label: {
                                 Image(systemName: addFavoritesItemsPressed ? "heart.circle.fill" : "heart.circle")
                                     .foregroundColor(addFavoritesItemsPressed ? .accentColor : .black)
                                     .font(.system(size: 36))
-//                                    .padding()
                             })
-                            .onChange(of: addFavoritesItemsPressed) {
-                                if addFavoritesItemsPressed {
-                                    items = ShoppingList.shared.getSortedItemsByName() + ShoppingList.shared.getFavorites()
-                                    items = Array(Set(items))
-                                }
-                                else {
-                                    items = ShoppingList.shared.shoppingItems
-                                }
-                            }
                             .buttonStyle(.borderless)
                             .padding()
                                                         
                         }
-//                        .padding(.top, 45)
                         
                     }
                 }
             }
-
-            //        }
             
             List {
-
                 
                 Section(header: Text("Add New Item")) {
                     HStack {
                         TextField("Name", text: $newItemName)
-                            .onChange(of: newItemName) { _ in
+                            .onChange(of: newItemName, {
                                 validateName()
-                            }
+                            })
                         
                         TextField("Quantity", text: $newItemQuantity)
                             .keyboardType(.numberPad)
@@ -119,14 +113,20 @@ struct ContentView: View {
                             Text("Add")
                                 .buttonBorderShape(.roundedRectangle)
                         })
-                        .disabled(!isNameValid)
+                        .disabled(!isNameValid || newItemName == "")
                         .buttonStyle(.borderedProminent)
+                        
+                    }
+                    
+                    if !isNameValid {
+                        Text("Item already exists")
+                            .foregroundStyle(.red)
                     }
                 }
                 
                 Section(header: Text("Shopping List")) {
-                    
-                    ForEach(ShoppingList.shared.getSortedItemsByName()) { item in
+                    // addFavoritesItemsPressed ? shoppingList.getAllItems() : shoppingList.getSortedItemsByName()
+                    ForEach(shoppingList.getSortedItemsByName()) { item in
                         
                         HStack {
                             
@@ -188,7 +188,7 @@ struct ContentView: View {
                                 ShoppingList.shared.deleteItem(item: selectedItem2Delete)
                             } label: {
                                 Text("Delete")
-                                    .foregroundColor(.red)
+                                    .foregroundStyle(.red)
                             }
                             
                         }))
@@ -226,7 +226,6 @@ struct ContentView: View {
                             .resizable()
                             .font(.system(size: 22))
                             .shadow(color: .black.opacity(0.3) ,radius: 6)
-                            
                     }
                 }
             }
@@ -237,12 +236,16 @@ struct ContentView: View {
                 .background(Color.white)
 
         }
-        
-        
     }
     
     private func validateName() {
-        isNameValid = newItemName != ""
+        var valid = true
+        for item in shoppingList.shoppingItems {
+            if item.name == newItemName {
+                valid = false
+            }
+        }
+        isNameValid = valid //newItemName != "" && 
     }
 }
 

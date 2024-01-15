@@ -86,6 +86,7 @@ struct FavoritesView: View {
                                 }
                             } label: {
                                 Text(item.isHearted ? "Remove from favorites" : "Add to favorites")
+                                    .foregroundStyle(item.isHearted ? .red : .black)
                             }
                             
                         }))

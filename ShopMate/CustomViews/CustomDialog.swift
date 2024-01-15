@@ -32,6 +32,7 @@ struct CustomDialog: View {
                     .font(.title2)
                     .bold()
                     .padding()
+                    .foregroundStyle(.gray)
                 
                 // Text input field
                 TextField("Enter text", text: $inputText)
@@ -39,6 +40,7 @@ struct CustomDialog: View {
                     .onAppear(perform: {
                         inputText = item.notes
                     })
+                    .foregroundStyle(.black)
                 
                 Button {
                     action()

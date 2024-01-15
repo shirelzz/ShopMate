@@ -226,6 +226,13 @@ class ShoppingList: ObservableObject {
         if let index = shoppingItems.firstIndex(where: { $0.id == item.id }) {
             shoppingItems[index].isChecked.toggle()
             isChecked = shoppingItems[index].isChecked
+            
+//            if item.isHearted {
+//                if let index = favShoppingItems.firstIndex(where: { $0.id == item.id }) {
+//                    favShoppingItems[index].isChecked.toggle()
+//                }
+//            }
+            
             updateIsChecked(item: item, newState: isChecked)
             
             print("--- 0 ischecked: \(isChecked)")
@@ -233,23 +240,35 @@ class ShoppingList: ObservableObject {
             print("--- 0 shoppingItems[index] ischecked: \(shoppingItems[index].isChecked.description)")
 
         }
+        
+        if isChecked {
+            // Delay the deletion after 4 seconds
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4) { [weak self] in
+                    guard let self = self else { return }
 
-        if isChecked { //
-            // Invalidate any existing timer to avoid multiple deletions
-            timer?.invalidate()
-            
-            // Create a new timer to delete the item after 4 seconds
-            timer = Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { [weak self] timer in
-                // Use a strong reference to self within the closure
-                guard let self = self else { return }
-                self.deleteItem(item: item)
-                self.timer = nil  // Clear the timer reference
-            }
-        } else {
-            // If the item is unchecked, invalidate the timer to prevent deletion
-            timer?.invalidate()
-            timer = nil  // Clear the timer reference
+                    // Check if the item is still checked before deleting
+                    if isChecked {
+                        self.deleteItem(item: item)
+                    }
+                }
         }
+
+//        if isChecked { //
+//            // Invalidate any existing timer to avoid multiple deletions
+//            timer?.invalidate()
+//            
+//            // Create a new timer to delete the item after 4 seconds
+//            timer = Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { [weak self] timer in
+//                // Use a strong reference to self within the closure
+//                guard let self = self else { return }
+//                self.deleteItem(item: item)
+//                self.timer = nil  // Clear the timer reference
+//            }
+//        } else {
+//            // If the item is unchecked, invalidate the timer to prevent deletion
+//            timer?.invalidate()
+//            timer = nil  // Clear the timer reference
+//        }
     }
     
     func deleteItem(item: ShoppingItem) {
@@ -264,7 +283,6 @@ class ShoppingList: ObservableObject {
             else{
                 saveItems2UD()
             }
-            
             // If the item is removed, cancel the timer
             timer?.invalidate()
         }
@@ -321,7 +339,12 @@ class ShoppingList: ObservableObject {
             }
             // update generic list
             updateItem(index: index)
-
+        }
+        else { // remove item from favorits list
+            if let index = favShoppingItems.firstIndex(of: item) {
+//                favShoppingItems[index].isHearted.toggle()
+                removeFavItem(item: item)
+            }
         }
     }
     
@@ -351,6 +374,24 @@ class ShoppingList: ObservableObject {
         }
     }
     
+    func addFavItemsInList() {
+        for item in favShoppingItems {
+            addItem(item: item)
+        }
+    }
+    
+    func updateFavItemsInList(add: Bool) {
+        if add {
+            for item in favShoppingItems {
+                addItem(item: item)
+            }
+        } else {
+            for item in favShoppingItems {
+                deleteItem(item: item)
+            }
+        }
+    }
+    
 //    private func updateFavItem(index: Array<ShoppingItem>.Index) {
 //        if isUserSignedIn {
 //            if let currentUser = Auth.auth().currentUser {
@@ -377,5 +418,10 @@ class ShoppingList: ObservableObject {
         return shoppingItems.sorted(by: { $0.name < $1.name })
     }
     
+    func getAllItems() -> [ShoppingItem] {
+        var currentItems = shoppingItems + favShoppingItems.filter({!$0.isChecked})
+        currentItems = Array(Set(currentItems))
+        return currentItems.sorted(by: { $0.name < $1.name })
+    }
+    
 }
-

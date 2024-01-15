@@ -305,6 +305,12 @@
             "state" : "translated",
             "value" : "Add to favorites"
           }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הוסף למועדפים"
+          }
         }
       }
     },
@@ -765,6 +771,12 @@
             "state" : "translated",
             "value" : "Enter text"
           }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "טקסט פה"
+          }
         }
       }
     },
@@ -774,6 +786,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enter text here"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "טקסט בא פה"
           }
         }
       }
@@ -801,6 +819,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Favorites"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מועדפים"
           }
         }
       }
@@ -880,6 +904,12 @@
             "state" : "translated",
             "value" : "Hello"
           }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "שלום"
+          }
         }
       }
     },
@@ -913,6 +943,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "פריט"
+          }
+        }
+      }
+    },
+    "Item already exists" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item already exists"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "פריט כבר קיים"
           }
         }
       }
@@ -1121,7 +1167,20 @@
       }
     },
     "No favorite items yet" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No favorite items yet"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "אין פריטים מועדפים עדיין"
+          }
+        }
+      }
     },
     "No inventory items yet" : {
       "extractionState" : "stale",
@@ -1203,7 +1262,7 @@
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "שימ.י לב: התחברות באמצעות גוגל או אפל מאפשרת לך לצפות במידע דרך כל המכשירים המקושרים לחשבון שלך."
+            "value" : "שימ.י לב: התחברות באמצעות Google או Apple מאפשרת לך לצפות במידע דרך כל המכשירים המקושרים לחשבון שלך."
           }
         }
       }
@@ -1214,6 +1273,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Note: signing in with Google or Apple allows you to view your data through all your connected devices."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "שימ.י לב: התחברות באמצעות Google או Apple מאפשרת לך לצפות במידע דרך כל המכשירים המקושרים לחשבון שלך."
           }
         }
       }
@@ -1776,6 +1841,12 @@
             "state" : "translated",
             "value" : "Remove from favorites"
           }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הסר ממועדפים"
+          }
         }
       }
     },
@@ -1885,7 +1956,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "רשימת קניות"
+            "value" : "Shopping List"
           }
         },
         "he" : {
@@ -2001,6 +2072,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "So good to see you 🥳"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "טוב לראות אותך! 🥳"
           }
         }
       }
