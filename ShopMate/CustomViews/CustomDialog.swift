@@ -40,7 +40,7 @@ struct CustomDialog: View {
                     .onAppear(perform: {
                         inputText = item.notes
                     })
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.primary)
                 
                 Button {
                     action()

@@ -64,6 +64,7 @@
 		D6F708202B54938400616E26 /* InfoOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7081F2B54938400616E26 /* InfoOverlay.swift */; };
 		D6F708222B549F0700616E26 /* CustomDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F708212B549F0700616E26 /* CustomDialog.swift */; };
 		D6F7082A2B556B6E00616E26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6F708292B556B6E00616E26 /* GoogleService-Info.plist */; };
+		D6F7082C2B56073300616E26 /* ClickableLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7082B2B56073300616E26 /* ClickableLinkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		D6F7081F2B54938400616E26 /* InfoOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoOverlay.swift; sourceTree = "<group>"; };
 		D6F708212B549F0700616E26 /* CustomDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDialog.swift; sourceTree = "<group>"; };
 		D6F708292B556B6E00616E26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D6F7082B2B56073300616E26 /* ClickableLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickableLinkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 				D6F7081D2B5470F700616E26 /* InfoWindow.swift */,
 				D6F7081F2B54938400616E26 /* InfoOverlay.swift */,
 				D6F708212B549F0700616E26 /* CustomDialog.swift */,
+				D6F7082B2B56073300616E26 /* ClickableLinkView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				D6E9A7A22B5412F6007D138C /* AuthService.swift in Sources */,
 				D6E9A7A32B5412F6007D138C /* SignInView.swift in Sources */,
 				D6E9A77A2B54121F007D138C /* ContentView.swift in Sources */,
+				D6F7082C2B56073300616E26 /* ClickableLinkView.swift in Sources */,
 				D6F7080D2B541C2400616E26 /* MainView.swift in Sources */,
 				D6E9A7A12B5412F6007D138C /* AuthState.swift in Sources */,
 				D6F708202B54938400616E26 /* InfoOverlay.swift in Sources */,
@@ -506,22 +510,25 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ShopMate/ShopMate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"ShopMate/Preview Content\"";
 				DEVELOPMENT_TEAM = 5M6RD9L4AH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShopMate/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ShopMate;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = "";
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "ShopMate-com.ShopMate";
@@ -539,22 +546,25 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ShopMate/ShopMate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"ShopMate/Preview Content\"";
 				DEVELOPMENT_TEAM = 5M6RD9L4AH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShopMate/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ShopMate;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = "";
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "ShopMate-com.ShopMate";
