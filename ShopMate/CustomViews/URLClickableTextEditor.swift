@@ -19,6 +19,11 @@ struct URLClickableTextView: UIViewRepresentable { //
         textView.dataDetectorTypes = .link
         textView.font = UIFont.preferredFont(forTextStyle: .body)
         textView.delegate = context.coordinator
+        
+        if #available(iOS 15.0, *) {
+            textView.overrideUserInterfaceStyle = .light
+        }
+        
         return textView
     }
     

@@ -38,7 +38,11 @@ struct CustomDialog: View {
                 .onAppear {
                     inputText = item.notes
                 }
-                
+                .onDisappear(perform: {
+                    item.notes = inputText
+                    ShoppingList.shared.updateNotes(item: item, notes: inputText)
+                })
+
                 Button {
                     action()
                     close()

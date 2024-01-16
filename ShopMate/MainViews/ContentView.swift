@@ -72,6 +72,9 @@ struct ContentView: View {
                     }
                 }
             }
+            .onTapGesture {
+                closeKeyboard()
+            }
             
             List {
                 
@@ -83,7 +86,8 @@ struct ContentView: View {
                             })
                         
                         TextField("Quantity", text: $newItemQuantity)
-                            .keyboardType(.numberPad)
+                            .keyboardType(.decimalPad)
+                            
                         
                         Button(action: {
                             
@@ -143,6 +147,7 @@ struct ContentView: View {
                                     Image(systemName: item.isChecked ? "checkmark.circle.fill" : "circle")
                                         .foregroundColor(item.isChecked ? .accentColor : .black)
                                 }
+                                .buttonStyle(.borderless)
                                 
                                 Text(item.name)
                                 
@@ -164,7 +169,7 @@ struct ContentView: View {
                                         }
                                     }
                                 ))
-                                .keyboardType(.numberPad)
+                                .keyboardType(.decimalPad)
                                 .frame(width: width/6)
                                 
                                 // Inside ForEach loop
@@ -204,6 +209,12 @@ struct ContentView: View {
                 }
                 
             }
+            .gesture(
+                TapGesture()
+                    .onEnded { _ in
+                        closeKeyboard()
+                    }
+            )
             .overlay(content: {
                 if isInfoOverlayPresented {
                     CustomDialog(isActive: $isInfoOverlayPresented, item: $selectedItem, title: "Details", buttonTitle: "Save")
