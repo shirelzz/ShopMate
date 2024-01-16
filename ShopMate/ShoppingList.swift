@@ -294,6 +294,12 @@ class ShoppingList: ObservableObject {
                 saveFavItems2UD()
             }
         }
+        
+        if let index = shoppingItems.firstIndex(where: { $0.id == item.id}) {
+            print("---> updating fav item from regular list: \(item.name)")
+            
+            shoppingItems[index].isHearted = false
+        }
     }
     
     func updateIsChecked(item: ShoppingItem, newState: Bool) {
@@ -312,7 +318,6 @@ class ShoppingList: ObservableObject {
     func updateNotes(item: ShoppingItem, notes: String) {
         if let index = shoppingItems.firstIndex(of: item) {
             shoppingItems[index].notes = notes
-            
             updateItem(index: index)
             
         }
@@ -326,18 +331,26 @@ class ShoppingList: ObservableObject {
                 // add to favorits list
                 if !favShoppingItems.contains(item){
                     saveFavItem(item: shoppingItems[index])
+                    print("--- 1 here")
                 }
+                print("--- 2 here")
+
             }
             else {
                 removeFavItem(item: item)
+                print("--- 3 here")
+
             }
             // update generic list
             updateItem(index: index)
+            print("--- 4 here")
+
         }
         else { // remove item from favorits list
             if let index = favShoppingItems.firstIndex(of: item) {
 //                favShoppingItems[index].isHearted.toggle()
                 removeFavItem(item: item)
+                print("--- 5 here")
             }
         }
     }
@@ -409,7 +422,6 @@ class ShoppingList: ObservableObject {
 //    }
     
     func getFavorites() -> [ShoppingItem] {
-//        fetchShoppingItems()
         return favShoppingItems.sorted(by: { $0.name < $1.name })
     }
     

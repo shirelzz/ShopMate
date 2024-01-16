@@ -9,7 +9,8 @@ import SwiftUI
 
 struct FavoritesView: View {
     
-    @State private var favoriteItems: [ShoppingItem] = ShoppingList.shared.getFavorites()
+    @ObservedObject private var shoppingList = ShoppingList.shared
+//    @State private var favoriteItems: [ShoppingItem] = ShoppingList.shared.getFavorites()
     @State private var isInfoOpen = false
     @State private var addedToFavorites = true
     @State private var inputText = ""
@@ -33,63 +34,51 @@ struct FavoritesView: View {
                         .opacity(0.4)
                         .frame(height: 20)
                     
-//                    HStack {
-//                        
-//                        //                            Spacer()
-//                        
-//                        Text(" Favorites")
-//                            .font(.largeTitle)
-//                            .bold()
-//                        //                                .padding(.leading)
-//                        
-//                        Spacer(minLength: 10)
-//                        
-//                    }
-//                    .padding(.top, 45)
-                    
                 }
                 
                 List {
                     
-                    if favoriteItems.isEmpty {
+                    if currentFavShoppingItems.isEmpty {
                         
                         Text("No favorite items yet")
                     }
-
-                    ForEach(favoriteItems) { item in
+                    else {
                         
-                        HStack {
+                        ForEach(currentFavShoppingItems) { item in
                             
-                            Text(item.name)
-                            
-                            Spacer()
-                            
-//                            Text(item.quantity.description)
-
-                            Button {
-                                isInfoOpen = true
-                                selectedItem = item
-
-                            } label: {
-                                Image(systemName: "info.circle")
-                            }
-                            .buttonStyle(.borderless)
-                            
-                        }
-                        .contextMenu(ContextMenu(menuItems: {
-                            
-                            Button {
-                                selectedItem2Fav = item
-                                if selectedItem2Fav.isHearted {
-                                    ShoppingList.shared.updateIsHearted(item: selectedItem2Fav)
-
+                            HStack {
+                                
+                                Text(item.name)
+                                
+                                Spacer()
+                                
+                                //                            Text(item.quantity.description)
+                                
+                                Button {
+                                    isInfoOpen = true
+                                    selectedItem = item
+                                    
+                                } label: {
+                                    Image(systemName: "info.circle")
                                 }
-                            } label: {
-                                Text(item.isHearted ? "Remove from favorites" : "Add to favorites")
-                                    .foregroundStyle(item.isHearted ? .red : .black)
+                                .buttonStyle(.borderless)
+                                
                             }
-                            
-                        }))
+                            .contextMenu(ContextMenu(menuItems: {
+                                
+                                Button {
+                                    selectedItem2Fav = item
+                                    if selectedItem2Fav.isHearted {
+                                        shoppingList.updateIsHearted(item: selectedItem2Fav)
+                                        
+                                    }
+                                } label: {
+                                    Text(item.isHearted ? "Remove from favorites" : "Add to favorites")
+                                        .foregroundStyle(item.isHearted ? .red : .black)
+                                }
+                                
+                            }))
+                        }
                     }
                 }
                 .overlay(content: {
@@ -103,6 +92,10 @@ struct FavoritesView: View {
             }
             .navigationTitle("Favorites")
         }
+    }
+    
+    var currentFavShoppingItems: [ShoppingItem] {
+        return shoppingList.getFavorites()
     }
 }
 

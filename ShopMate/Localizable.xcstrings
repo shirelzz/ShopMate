@@ -782,6 +782,7 @@
       }
     },
     "Enter text here" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1218,7 +1219,20 @@
       }
     },
     "No items in your list yet" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No items in your list yet"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "אין פריטים ברשימה שלך עדיין"
+          }
+        }
+      }
     },
     "No orders yet" : {
       "extractionState" : "stale",
@@ -1855,6 +1869,7 @@
       }
     },
     "Save" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

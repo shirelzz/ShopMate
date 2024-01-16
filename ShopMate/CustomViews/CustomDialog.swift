@@ -36,12 +36,13 @@ struct CustomDialog: View {
                 
                 URLClickableTextView(text: $inputText)
                 .onAppear {
-                    inputText = item.notes
+                    if item.notes.isEmpty{
+                        inputText = "Enter text"
+                    }
+                    else {
+                        inputText = item.notes
+                    }
                 }
-                .onDisappear(perform: {
-                    item.notes = inputText
-                    ShoppingList.shared.updateNotes(item: item, notes: inputText)
-                })
 
                 Button {
                     action()
@@ -89,7 +90,9 @@ struct CustomDialog: View {
     }
 
     func close() {
+//        item.notes = inputText
         ShoppingList.shared.updateNotes(item: item, notes: inputText)
+        print("--- on close")
         withAnimation(.spring()) {
             offset = 1000
             isActive = false

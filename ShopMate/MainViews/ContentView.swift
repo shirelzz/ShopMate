@@ -126,7 +126,7 @@ struct ContentView: View {
                 
                 Section(header: Text("Shopping List")) {
                     
-                    if currenthoppingItems.isEmpty {
+                    if currentShoppingItems.isEmpty {
                                            
                                            Text("No items in your list yet")
                                                .font(.headline)
@@ -135,7 +135,7 @@ struct ContentView: View {
                                            
                     } else {
                         // addFavoritesItemsPressed ? shoppingList.getAllItems() : shoppingList.getSortedItemsByName()
-                        ForEach(currenthoppingItems, id: \.shoppingItemID) { item in
+                        ForEach(currentShoppingItems, id: \.shoppingItemID) { item in
                             
                             HStack {
                                 
@@ -269,7 +269,7 @@ struct ContentView: View {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
     
-    var currenthoppingItems: [ShoppingItem] {
+    var currentShoppingItems: [ShoppingItem] {
         return shoppingList.getSortedItemsByName()
     }
 }
