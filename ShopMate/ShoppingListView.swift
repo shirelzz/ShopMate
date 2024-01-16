@@ -78,12 +78,3 @@ struct ShoppingListView: View {
     }
 }
 
-struct ShoppingListView_Previews: PreviewProvider {
-    static var previews: some View {
-        let previewList = ShoppingList()
-        previewList.addItem(item: ShoppingItem(shoppingItemID: UUID().uuidString, name: "Cocoa", quantity: 1, isChecked: false, notes: "String", isHearted: false))
-        previewList.addItem(item: ShoppingItem(shoppingItemID: UUID().uuidString, name: "Milk", quantity: 4, isChecked: false, notes: "", isHearted: true))
-
-        return ShoppingListView(shoppingList: previewList)
-    }
-}

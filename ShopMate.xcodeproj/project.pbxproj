@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6419D9C2B570BB60021CE06 /* URLClickableTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6419D9B2B570BB60021CE06 /* URLClickableTextEditor.swift */; };
 		D6AD94E92B5414D500AA8773 /* Whatsapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AD94E82B5414D500AA8773 /* Whatsapp.swift */; };
 		D6AD94EB2B5414EC00AA8773 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AD94EA2B5414EC00AA8773 /* CustomButtonStyle.swift */; };
 		D6AD94ED2B5414FF00AA8773 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AD94EC2B5414FF00AA8773 /* Router.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D6419D9B2B570BB60021CE06 /* URLClickableTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLClickableTextEditor.swift; sourceTree = "<group>"; };
 		D6AD94E82B5414D500AA8773 /* Whatsapp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Whatsapp.swift; sourceTree = "<group>"; };
 		D6AD94EA2B5414EC00AA8773 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		D6AD94EC2B5414FF00AA8773 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				D6F7081F2B54938400616E26 /* InfoOverlay.swift */,
 				D6F708212B549F0700616E26 /* CustomDialog.swift */,
 				D6F7082B2B56073300616E26 /* ClickableLinkView.swift */,
+				D6419D9B2B570BB60021CE06 /* URLClickableTextEditor.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				D6E9A7A72B5412F6007D138C /* Toast.swift in Sources */,
 				D6F708222B549F0700616E26 /* CustomDialog.swift in Sources */,
 				D6F7081E2B5470F700616E26 /* InfoWindow.swift in Sources */,
+				D6419D9C2B570BB60021CE06 /* URLClickableTextEditor.swift in Sources */,
 				D6AD94EB2B5414EC00AA8773 /* CustomButtonStyle.swift in Sources */,
 				D6AD94ED2B5414FF00AA8773 /* Router.swift in Sources */,
 				D6E9A7902B5412DA007D138C /* ShoppingListView.swift in Sources */,

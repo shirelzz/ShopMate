@@ -6,13 +6,10 @@
 //
 
 import SwiftUI
-
+import FirebaseAuth
 
 struct ContentView: View {
     @StateObject private var shoppingList = ShoppingList.shared
-//    @ObservedObject var shoppingList = ShoppingList.shared
-//    @State private var items: [ShoppingItem] = ShoppingList.shared.getSortedItemsByName()
-//    @State private var favItems: [ShoppingItem] = ShoppingList.shared.getFavorites()
     @State private var newItemName = ""
     @State private var newItemQuantity = ""
     @State private var isNameValid = true
@@ -25,11 +22,7 @@ struct ContentView: View {
     @State private var updatefavorites = false
     @State private var flag = false
     @State private var selectedItem2Check: ShoppingItem = ShoppingItem()
-    
-    init(){
-//        items = ShoppingList.shared.getSortedItemsByName()
-//        favItems = ShoppingList.shared.getFavorites()
-    }
+    @State private var isUserSignedIn = Auth.auth().currentUser != nil
     
     var body: some View {
         
@@ -64,7 +57,7 @@ struct ContentView: View {
                                     flag = true
                                 }
                                 
-                                ShoppingList.shared.updateFavItemsInList(add: addFavoritesItemsPressed)
+                                shoppingList.updateFavItemsInList(add: addFavoritesItemsPressed)
                                 
                             }, label: {
                                 Image(systemName: addFavoritesItemsPressed ? "heart.circle.fill" : "heart.circle")
@@ -104,7 +97,7 @@ struct ContentView: View {
                                 isHearted: false
                             )
                             
-                            ShoppingList.shared.addItem(item: newItem)
+                            shoppingList.addItem(item: newItem)
                             
                             newItemName = ""
                             newItemQuantity = ""
@@ -128,74 +121,84 @@ struct ContentView: View {
                 }
                 
                 Section(header: Text("Shopping List")) {
-                    // addFavoritesItemsPressed ? shoppingList.getAllItems() : shoppingList.getSortedItemsByName()
-                    ForEach(shoppingList.getSortedItemsByName()) { item in
-                        
-                        HStack {
+                    
+                    if currenthoppingItems.isEmpty {
+                                           
+                                           Text("No items in your list yet")
+                                               .font(.headline)
+                                               .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                           
+                                           
+                    } else {
+                        // addFavoritesItemsPressed ? shoppingList.getAllItems() : shoppingList.getSortedItemsByName()
+                        ForEach(currenthoppingItems, id: \.shoppingItemID) { item in
                             
-                            Button {
-                                selectedItem2Check = item
-                                ShoppingList.shared.toggleCheck(item: selectedItem2Check)
-                                print("--- finished")
-                            } label: {
-                                Image(systemName: item.isChecked ? "checkmark.circle.fill" : "circle")
-                                    .foregroundColor(item.isChecked ? .accentColor : .black)
-                            }
-                            
-                            Text(item.name)
-                            
-                            if item.isHearted {
-                                Image(systemName: "heart.fill")
-                                    .font(.system(size: 12))
-                            }
-                            
-                            Spacer()
-                            
-                            
-                            TextField("Quantity", text: Binding(
-                                get: {
-                                    item.quantity.description
-                                },
-                                set: { newValue in
-                                    if let newQuantity = Int(newValue) {
-                                        ShoppingList.shared.updateQuantity(item: item, newQuantity: newQuantity)
-                                    }
-                                }
-                            ))
-                            .keyboardType(.numberPad)
-                            .frame(width: width/6)
-                            
-                            // Inside ForEach loop
-                            Button {
-                                isInfoOverlayPresented = true
-                                selectedItem = item
+                            HStack {
                                 
-                            } label: {
-                                Image(systemName: "info.circle")
+                                Button {
+                                    selectedItem2Check = item
+                                    shoppingList.toggleCheck(item: selectedItem2Check)
+                                    print("--- finished")
+                                } label: {
+                                    Image(systemName: item.isChecked ? "checkmark.circle.fill" : "circle")
+                                        .foregroundColor(item.isChecked ? .accentColor : .black)
+                                }
+                                
+                                Text(item.name)
+                                
+                                if item.isHearted {
+                                    Image(systemName: "heart.fill")
+                                        .font(.system(size: 12))
+                                }
+                                
+                                Spacer()
+                                
+                                
+                                TextField("Quantity", text: Binding(
+                                    get: {
+                                        item.quantity.description
+                                    },
+                                    set: { newValue in
+                                        if let newQuantity = Int(newValue) {
+                                            shoppingList.updateQuantity(item: item, newQuantity: newQuantity)
+                                        }
+                                    }
+                                ))
+                                .keyboardType(.numberPad)
+                                .frame(width: width/6)
+                                
+                                // Inside ForEach loop
+                                Button {
+                                    isInfoOverlayPresented = true
+                                    selectedItem = item
+                                    
+                                } label: {
+                                    Image(systemName: "info.circle")
+                                }
+                                .buttonStyle(.borderless)
+                                
                             }
-                            .buttonStyle(.borderless)
+                            .contextMenu(ContextMenu(menuItems: {
+                                
+                                
+                                Button {
+                                    selectedItem2Fav = item
+                                    shoppingList.updateIsHearted(item: selectedItem2Fav)
+                                } label: {
+                                    Text(item.isHearted ? "Remove from favorites" : "Add to favorites")
+                                }
+                                
+                                Button {
+                                    selectedItem2Delete = item
+                                    shoppingList.deleteItem(item: selectedItem2Delete)
+                                } label: {
+                                    Text("Delete")
+                                        .foregroundStyle(.red)
+                                }
+                                
+                            }))
                             
                         }
-                        .contextMenu(ContextMenu(menuItems: {
-
-                            
-                            Button {
-                                selectedItem2Fav = item
-                                ShoppingList.shared.updateIsHearted(item: selectedItem2Fav)
-                            } label: {
-                                Text(item.isHearted ? "Remove from favorites" : "Add to favorites")
-                            }
-                            
-                            Button {
-                                selectedItem2Delete = item
-                                ShoppingList.shared.deleteItem(item: selectedItem2Delete)
-                            } label: {
-                                Text("Delete")
-                                    .foregroundStyle(.red)
-                            }
-                            
-                        }))
-                                                
                     }
                     
                 }
@@ -253,6 +256,10 @@ struct ContentView: View {
     
     func closeKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    
+    var currenthoppingItems: [ShoppingItem] {
+        return shoppingList.getSortedItemsByName()
     }
 }
 

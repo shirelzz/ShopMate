@@ -23,7 +23,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         // Initialize the Mobile Ads SDK
         GADMobileAds.sharedInstance().start(completionHandler: nil)
-
+        
         return true
     }
     
@@ -42,13 +42,11 @@ struct ShopMateApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     @StateObject private var authState = AuthState()
-//    @StateObject private var shoppingList = ShoppingList.shared
 
     var body: some Scene {
         WindowGroup {
             MainView()
                 .environmentObject(authState)
-                .environmentObject(ShoppingList.shared)
                 .onAppear {
                     // Ensure Firebase is configured only once
                     if FirebaseApp.app() == nil {

@@ -765,6 +765,7 @@
       }
     },
     "Enter text" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -775,7 +776,7 @@
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "טקסט פה"
+            "value" : "הכנס טקסט"
           }
         }
       }
@@ -791,7 +792,7 @@
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "טקסט בא פה"
+            "value" : "הכנס טקסט"
           }
         }
       }
@@ -1215,6 +1216,9 @@
           }
         }
       }
+    },
+    "No items in your list yet" : {
+
     },
     "No orders yet" : {
       "extractionState" : "stale",
