@@ -115,6 +115,9 @@ struct ContentView: View {
                         })
                         .disabled(!isNameValid || newItemName == "")
                         .buttonStyle(.borderedProminent)
+                        .onTapGesture {
+                            closeKeyboard()
+                        }
                         
                     }
                     
@@ -246,6 +249,10 @@ struct ContentView: View {
             }
         }
         isNameValid = valid //newItemName != "" && 
+    }
+    
+    func closeKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

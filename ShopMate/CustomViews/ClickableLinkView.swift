@@ -39,6 +39,51 @@ struct ClickableLinkView: View {
 //
 //        formattedText = formattedText + Text(inputText[Range(formattedText.string.endIndex, in: inputText)!..<inputText.endIndex])
     }
+    
+    
+//    
+//    func parseAttributedString(from text: String) -> AttributedString {
+//        guard let data = text.data(using: .utf8) else {
+//            return AttributedString(text)
+//        }
+//        
+//        do {
+//            let attributedString = try NSAttributedString(
+//                data: data,
+//                options: [
+//                    .documentType: NSAttributedString.DocumentType.html,
+//                    .characterEncoding: String.Encoding.utf8.rawValue
+//                ],
+//                documentAttributes: nil
+//            )
+//            
+//            return AttributedString(attributedString)
+//        } catch {
+//            return AttributedString(text)
+//        }
+//    }
+    
+    func parseAttributedString(from text: String) -> AttributedString {
+        guard let data = text.data(using: .utf8) else {
+            return AttributedString(text)
+        }
+
+        do {
+            let attributedString = try NSAttributedString(
+                data: data,
+                options: [
+                    .documentType: NSAttributedString.DocumentType.html,
+                    .characterEncoding: String.Encoding.utf8.rawValue
+                ],
+                documentAttributes: nil
+            )
+
+            return AttributedString(attributedString)
+        } catch {
+            return AttributedString(text)
+        }
+    }
+
 }
 
 
