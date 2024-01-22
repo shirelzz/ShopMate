@@ -10,11 +10,14 @@ import FirebaseAuth
 
 struct ContentView: View {
     @StateObject private var shoppingList = ShoppingList.shared
+
+
     @State private var newItemName = ""
     @State private var newItemQuantity = ""
     @State private var isNameValid = true
     @State private var isInfoOverlayPresented = false
     @State private var inputText = ""
+//    @State private var nilItem: ShoppingItem = ShoppingItem()
     @State private var selectedItem: ShoppingItem = ShoppingItem()
     @State private var selectedItem2Fav: ShoppingItem = ShoppingItem()
     @State private var selectedItem2Delete: ShoppingItem = ShoppingItem()
@@ -27,15 +30,17 @@ struct ContentView: View {
     var body: some View {
         
         let width = UIScreen.main.bounds.width - 32
-        
+//        var nilItem: ShoppingItem = ShoppingItem()
+
         NavigationStack{
-                        
+            
             ZStack(alignment: .topTrailing) {
                 //                AppOpenAdView(adUnitID: "ca-app-pub-3940256099942544/5575463023")
                 // test:  ca-app-pub-3940256099942544/5575463023
-                
+//                CustomTabView()
+
                 VStack (alignment: .leading, spacing: 10) {
-                    
+
                     VStack{
                         
                         Image("aesthticYellow")
@@ -66,7 +71,7 @@ struct ContentView: View {
                             })
                             .buttonStyle(.borderless)
                             .padding()
-                                                        
+                            
                         }
                         
                     }
@@ -87,7 +92,7 @@ struct ContentView: View {
                         
                         TextField("Quantity", text: $newItemQuantity)
                             .keyboardType(.decimalPad)
-                            
+                        
                         
                         Button(action: {
                             
@@ -95,7 +100,7 @@ struct ContentView: View {
                                 
                                 shoppingItemID: UUID().uuidString,
                                 name: newItemName,
-                                quantity: (Int)(newItemQuantity) ?? 0,
+                                quantity: (Double)(newItemQuantity) ?? 0,
                                 isChecked: false,
                                 notes: "",
                                 isHearted: false
@@ -127,12 +132,11 @@ struct ContentView: View {
                 Section(header: Text("Shopping List")) {
                     
                     if currentShoppingItems.isEmpty {
-                                           
-                                           Text("No items in your list yet")
-                                               .font(.headline)
-                                               .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                           
-                                           
+                        
+                        Text("No items in your list yet")
+                            .font(.headline)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        
                     } else {
                         // addFavoritesItemsPressed ? shoppingList.getAllItems() : shoppingList.getSortedItemsByName()
                         ForEach(currentShoppingItems, id: \.shoppingItemID) { item in
@@ -142,7 +146,6 @@ struct ContentView: View {
                                 Button {
                                     selectedItem2Check = item
                                     shoppingList.toggleCheck(item: selectedItem2Check)
-                                    print("--- finished")
                                 } label: {
                                     Image(systemName: item.isChecked ? "checkmark.circle.fill" : "circle")
                                         .foregroundColor(item.isChecked ? .accentColor : .black)
@@ -158,13 +161,16 @@ struct ContentView: View {
                                 
                                 Spacer()
                                 
-                                
                                 TextField("Quantity", text: Binding(
                                     get: {
-                                        item.quantity.description
+                                        if item.quantity.rounded() == item.quantity {
+                                            return Int(item.quantity).description
+                                        } else {
+                                            return item.quantity.description
+                                        }
                                     },
                                     set: { newValue in
-                                        if let newQuantity = Int(newValue) {
+                                        if let newQuantity = Double(newValue) {
                                             shoppingList.updateQuantity(item: item, newQuantity: newQuantity)
                                         }
                                     }
@@ -174,8 +180,11 @@ struct ContentView: View {
                                 
                                 // Inside ForEach loop
                                 Button {
-                                    isInfoOverlayPresented = true
+                                    print("--- info tapped")
                                     selectedItem = item
+                                    isInfoOverlayPresented = true
+                                    print("--- selected item: \(selectedItem.name). notes: \(selectedItem.notes)")
+                                    print("--- selected item (item): \(item.name). notes: \(item.notes)")
                                     
                                 } label: {
                                     Image(systemName: "info.circle")
@@ -207,6 +216,9 @@ struct ContentView: View {
                     }
                     
                 }
+
+
+
                 
             }
             .gesture(
@@ -216,43 +228,83 @@ struct ContentView: View {
                     }
             )
             .overlay(content: {
-                if isInfoOverlayPresented {
+                if isInfoOverlayPresented  { //&& selectedItem != nilItem
                     CustomDialog(isActive: $isInfoOverlayPresented, item: $selectedItem, title: "Details", buttonTitle: "Save")
+                    //                        .onDisappear {
+                    //                            selectedItem = nilItem
+                    //                            isInfoOverlayPresented = false
+                    //                        }
+                        .onAppear {
+                            print("--- isInfoOverlayPresented (selectedItem): \(selectedItem)")
+                        }
                 }
             })
-            .toolbar {
-                
-                ToolbarItem(placement: .navigationBarLeading) {
-                    
-                    Menu {
-                        
-                        HStack {
-                            NavigationLink(destination: FavoritesView()) {
-                                Label("Favorites", systemImage: "heart")
+            
+
+            
+                        .toolbar {
+            
+                            ToolbarItem(placement: .navigationBarLeading) {
+            
+                                Menu {
+            
+                                    HStack {
+                                        NavigationLink(destination: FavoritesView()) {
+                                            Label("Favorites", systemImage: "heart")
+                                        }
+                                    }
+            
+                                    HStack {
+                                        NavigationLink(destination: SettingsView()) {
+                                            Label("Settings", systemImage: "gear")
+                                        }
+                                    }
+            
+                                } label: {
+                                    Image(systemName: "line.horizontal.3")
+                                        .resizable()
+                                        .font(.system(size: 22))
+                                        .shadow(color: .black.opacity(0.3) ,radius: 6)
+                                }
                             }
                         }
-                        
-                        HStack {
-                            NavigationLink(destination: SettingsView()) {
-                                Label("Settings", systemImage: "gear")
-                            }
-                        }
-                        
-                    } label: {
-                        Image(systemName: "line.horizontal.3")
-                            .resizable()
-                            .font(.system(size: 22))
-                            .shadow(color: .black.opacity(0.3) ,radius: 6)
-                    }
-                }
-            }
+            
+            
             .navigationTitle("Hello")
             
-            AdBannerView(adUnitID: "ca-app-pub-3940256099942544/2934735716")
-                .frame(height: 50)
-                .background(Color.white)
+
 
         }
+//        CustomTabView()
+
+        
+        AdBannerView(adUnitID: "ca-app-pub-3940256099942544/2934735716")
+            .frame(height: 50)
+            .background(Color.white)
+//        .toolbar {
+//            ToolbarItem(placement: .bottomBar) {
+//                Menu {
+//                    HStack {
+//                        NavigationLink(destination: FavoritesView()) {
+//                            Label("Favorites", systemImage: "heart")
+//                        }
+//                    }
+//                    
+//                    HStack {
+//                        NavigationLink(destination: SettingsView()) {
+//                            Label("Settings", systemImage: "gear")
+//                        }
+//                    }
+//                    
+//                } label: {
+//                    Image(systemName: "line.horizontal.3")
+//                        .resizable()
+//                        .font(.system(size: 22))
+//                        .shadow(color: .black.opacity(0.3), radius: 6)
+//                }
+//            }
+//        }
+    
     }
     
     private func validateName() {

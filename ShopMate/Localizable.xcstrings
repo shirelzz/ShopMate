@@ -1819,7 +1819,11 @@
         }
       }
     },
+    "Quantity: %lf" : {
+
+    },
     "Quantity: %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

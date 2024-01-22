@@ -36,7 +36,7 @@ class DatabaseManager {
                 guard let shoppingItemDict = itemData as? [String: Any],
                       let shoppingItemID = shoppingItemDict["shoppingItemID"] as? String,
                       let name = shoppingItemDict["name"] as? String,
-                      let quantity = shoppingItemDict["quantity"] as? Int,
+                      let quantity = shoppingItemDict["quantity"] as? Double,
                       let isChecked = shoppingItemDict["isChecked"] as? Bool,
                       let notes = shoppingItemDict["notes"] as? String,
                       let isHearted = shoppingItemDict["isHearted"] as? Bool

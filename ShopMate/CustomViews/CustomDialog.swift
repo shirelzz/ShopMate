@@ -13,6 +13,7 @@ struct CustomDialog: View {
     @State private var inputText = ""
     @State private var formattedText: AttributedString = AttributedString("")
     @State private var links: [URL] = []
+//        .frame(maxHeight: UIScreen.main.bounds.height * 0.5)
 
     let title: String
     let buttonTitle: String
@@ -24,14 +25,14 @@ struct CustomDialog: View {
             Color(.black)
                 .opacity(0.4)
                 .onTapGesture {
-                    close()
+                    //close()
                 }
 
-            VStack(spacing: 10)  {
+            VStack()  { //spacing: 10
                 Text(title)
-                    .font(.title2)
+                    .font(.headline)
                     .bold()
-                    .padding()
+//                    .padding()
                     .foregroundStyle(.gray)
                 
                 URLClickableTextView(text: $inputText)
@@ -64,7 +65,7 @@ struct CustomDialog: View {
                     close()
                 } label: {
                     Image(systemName: "xmark")
-                        .font(.title2)
+                        .font(.headline)
                         .fontWeight(.medium)
                 }
                 .tint(.black)
@@ -79,7 +80,6 @@ struct CustomDialog: View {
                     offset = 0
                 }
             }
-
         }
         .ignoresSafeArea()
         .frame(maxWidth: .infinity, maxHeight: .infinity)  // For full-screen coverage
@@ -91,11 +91,19 @@ struct CustomDialog: View {
 
     func close() {
 //        item.notes = inputText
-        ShoppingList.shared.updateNotes(item: item, notes: inputText)
+        if inputText != "Enter text" {
+            ShoppingList.shared.updateNotes(item: item, notes: inputText)
+//            inputText = ""
+        }
         print("--- on close")
+        print("--- on close item: \(item.name)")
+        print("--- on close notes item: \(item.notes)")
+        print("--- on close inputText: \(inputText)")
+
         withAnimation(.spring()) {
             offset = 1000
             isActive = false
+
         }
     }
 }

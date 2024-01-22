@@ -13,7 +13,7 @@ struct ShoppingItem: Codable, Identifiable, Hashable {
     var id: String { shoppingItemID }
     var shoppingItemID: String
     var name: String
-    var quantity: Int
+    var quantity: Double
     var isChecked: Bool
     var notes: String
     var isHearted: Bool
@@ -28,7 +28,7 @@ struct ShoppingItem: Codable, Identifiable, Hashable {
 
     }
     
-    init(shoppingItemID: String, name: String, quantity: Int, isChecked: Bool, notes: String, isHearted: Bool) {
+    init(shoppingItemID: String, name: String, quantity: Double, isChecked: Bool, notes: String, isHearted: Bool) {
         self.shoppingItemID = shoppingItemID
         self.name = name
         self.quantity = quantity
@@ -57,7 +57,7 @@ struct ShoppingItem: Codable, Identifiable, Hashable {
         
         guard let shoppingItemID = dictionary["shoppingItemID"] as? String,
               let name = dictionary["name"] as? String,
-              let quantity = dictionary["quantity"] as? Int,
+              let quantity = dictionary["quantity"] as? Double,
               let isChecked = dictionary["isChecked"] as? Bool,
               let notes = dictionary["notes"] as? String,
               let isHearted = dictionary["isHearted"] as? Bool
@@ -319,7 +319,12 @@ class ShoppingList: ObservableObject {
         if let index = shoppingItems.firstIndex(of: item) {
             shoppingItems[index].notes = notes
             updateItem(index: index)
-            
+            print("--- \(item.name) notes updated: \(notes)")
+        }
+        
+        if let i = favShoppingItems.firstIndex(of: item) {
+            updateFavItem(index: i)
+            print("--- \(item.name) notes updated (fav): \(notes)")
         }
     }
     
@@ -355,7 +360,7 @@ class ShoppingList: ObservableObject {
         }
     }
     
-    func updateQuantity(item: ShoppingItem, newQuantity: Int) {
+    func updateQuantity(item: ShoppingItem, newQuantity: Double) {
         if let index = shoppingItems.firstIndex(of: item) {
             shoppingItems[index].quantity = newQuantity
             
@@ -364,7 +369,6 @@ class ShoppingList: ObservableObject {
     }
     
     private func updateItem(index: Array<ShoppingItem>.Index) {
-        print("--- 1 shoppingItems[index] ischecked: \(shoppingItems[index].isChecked.description)")
 
         if isUserSignedIn {
             if let currentUser = Auth.auth().currentUser {
@@ -378,6 +382,22 @@ class ShoppingList: ObservableObject {
             }
         } else {
             saveItems2UD()
+        }
+    }
+    
+    private func updateFavItem(index: Array<ShoppingItem>.Index) {
+        if isUserSignedIn {
+            if let currentUser = Auth.auth().currentUser {
+                let userID = currentUser.uid
+                let path = "users/\(userID)/favShoppingList/\(favShoppingItems[index].shoppingItemID)"
+                DatabaseManager.shared.updateItemInDB(favShoppingItems[index], path: path) { success in
+                    if !success {
+                        print("updating in the database failed (update shopping item)")
+                    }
+                }
+            }
+        } else {
+            saveFavItems2UD()
         }
     }
     

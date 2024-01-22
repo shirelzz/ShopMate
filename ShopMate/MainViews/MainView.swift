@@ -37,7 +37,7 @@ struct MainView: View {
             }
             else {
                 
-                NavigationView {
+                NavigationStack {
                     if !hasLaunchedBefore {
                         
                         WelcomeView()

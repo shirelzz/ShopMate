@@ -59,27 +59,11 @@ struct URLClickableTextView: UIViewRepresentable { //
         }
     }
 
-
-//    class Coordinator: NSObject, UITextViewDelegate {
-//        var parent: URLClickableTextView
-//
-//        init(_ parent: URLClickableTextView) {
-//            self.parent = parent
-//        }
-//
-//        func textViewDidChange(_ textView: UITextView) {
-//            parent.text = textView.text
-//            parent.enableLinkDetection(textView: textView)
-//        }
-//
-//        func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-//            // Handle URL interaction here if needed
-//            UIApplication.shared.open(URL)
-//            return false
-//        }
-//    }
-
     func enableLinkDetection(textView: UITextView) {
+        guard !text.isEmpty else {
+               return
+           }
+        
         textView.textStorage.beginEditing()
         let range = NSRange(location: 0, length: textView.textStorage.length)
         textView.textStorage.removeAttribute(.link, range: range)
@@ -98,16 +82,3 @@ struct URLClickableTextView: UIViewRepresentable { //
     }
 }
 
-
-//    @State private var inputText = "Enter text with URLs like https://www.example.com"
-//
-//    var body: some View {
-//        URLClickableTextEditor(text: $inputText)
-//            .padding()
-//    }
-
-
-//
-//#Preview {
-//    URLClickableTextEditor(text: "Enter text with URLs like https://www.example.com")
-//}

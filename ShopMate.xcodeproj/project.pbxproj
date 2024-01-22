@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D6419D9C2B570BB60021CE06 /* URLClickableTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6419D9B2B570BB60021CE06 /* URLClickableTextEditor.swift */; };
+		D69E2A632B584CD3004F0D5C /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69E2A622B584CD3004F0D5C /* CustomTabBar.swift */; };
 		D6AD94E92B5414D500AA8773 /* Whatsapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AD94E82B5414D500AA8773 /* Whatsapp.swift */; };
 		D6AD94EB2B5414EC00AA8773 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AD94EA2B5414EC00AA8773 /* CustomButtonStyle.swift */; };
 		D6AD94ED2B5414FF00AA8773 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AD94EC2B5414FF00AA8773 /* Router.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		D6419D9B2B570BB60021CE06 /* URLClickableTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLClickableTextEditor.swift; sourceTree = "<group>"; };
+		D69E2A622B584CD3004F0D5C /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		D6AD94E82B5414D500AA8773 /* Whatsapp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Whatsapp.swift; sourceTree = "<group>"; };
 		D6AD94EA2B5414EC00AA8773 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		D6AD94EC2B5414FF00AA8773 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				D6F708212B549F0700616E26 /* CustomDialog.swift */,
 				D6F7082B2B56073300616E26 /* ClickableLinkView.swift */,
 				D6419D9B2B570BB60021CE06 /* URLClickableTextEditor.swift */,
+				D69E2A622B584CD3004F0D5C /* CustomTabBar.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				D6F708102B541D1300616E26 /* LaunchView.swift in Sources */,
 				D6E9A7A22B5412F6007D138C /* AuthService.swift in Sources */,
 				D6E9A7A32B5412F6007D138C /* SignInView.swift in Sources */,
+				D69E2A632B584CD3004F0D5C /* CustomTabBar.swift in Sources */,
 				D6E9A77A2B54121F007D138C /* ContentView.swift in Sources */,
 				D6F7082C2B56073300616E26 /* ClickableLinkView.swift in Sources */,
 				D6F7080D2B541C2400616E26 /* MainView.swift in Sources */,
@@ -506,7 +510,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ShopMate/ShopMate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"ShopMate/Preview Content\"";
 				DEVELOPMENT_TEAM = 5M6RD9L4AH;
 				ENABLE_PREVIEWS = YES;
@@ -542,7 +546,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ShopMate/ShopMate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"ShopMate/Preview Content\"";
 				DEVELOPMENT_TEAM = 5M6RD9L4AH;
 				ENABLE_PREVIEWS = YES;

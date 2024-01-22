@@ -12,7 +12,7 @@ struct ShoppingListView: View {
     @State private var newItemName = ""
     @State private var newItemQuantity = ""
     @State private var isNameValid = true
-
+    @State private var isQuantityValid = true
 
     var body: some View {
         NavigationView {
@@ -20,11 +20,14 @@ struct ShoppingListView: View {
                 Section(header: Text("Add New Item")) {
                     HStack {
                         TextField("Name", text: $newItemName)
-                            .onChange(of: newItemName) { _ in
+                            .onChange(of: newItemName) { oldValue, newValue in
                                     validateName()
                             }
                         TextField("Quantity", text: $newItemQuantity)
                             .keyboardType(.numberPad)
+                            .onChange(of: newItemQuantity) { oldValue, newValue in
+                                validateQuantity()
+                            }
                         
                         Button(action: {
                             
@@ -32,7 +35,7 @@ struct ShoppingListView: View {
                                 
                                 shoppingItemID: UUID().uuidString,
                                 name: newItemName,
-                                quantity: (Int)(newItemQuantity) ?? 0,
+                                quantity: (Double)(newItemQuantity) ?? 0,
                                 isChecked: false,
                                 notes: "",
                                 isHearted: false
@@ -76,5 +79,10 @@ struct ShoppingListView: View {
     private func validateName() {
         isNameValid = newItemName != ""
     }
+    
+    private func validateQuantity() {
+        isQuantityValid = Double(newItemQuantity) ?? 0 > 0
+    }
+
 }
 
