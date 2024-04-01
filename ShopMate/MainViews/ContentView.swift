@@ -37,10 +37,10 @@ struct ContentView: View {
             ZStack(alignment: .topTrailing) {
                 //                AppOpenAdView(adUnitID: "ca-app-pub-3940256099942544/5575463023")
                 // test:  ca-app-pub-3940256099942544/5575463023
-//                CustomTabView()
-
+                //                CustomTabView()
+                
                 VStack (alignment: .leading, spacing: 10) {
-
+                    
                     VStack{
                         
                         Image("aesthticYellow")
@@ -216,9 +216,9 @@ struct ContentView: View {
                     }
                     
                 }
-
-
-
+                
+                
+                
                 
             }
             .gesture(
@@ -240,40 +240,36 @@ struct ContentView: View {
                 }
             })
             
-
             
-                        .toolbar {
             
-                            ToolbarItem(placement: .navigationBarLeading) {
-            
-                                Menu {
-            
-                                    HStack {
-                                        NavigationLink(destination: FavoritesView()) {
-                                            Label("Favorites", systemImage: "heart")
-                                        }
-                                    }
-            
-                                    HStack {
-                                        NavigationLink(destination: SettingsView()) {
-                                            Label("Settings", systemImage: "gear")
-                                        }
-                                    }
-            
-                                } label: {
-                                    Image(systemName: "line.horizontal.3")
-                                        .resizable()
-                                        .font(.system(size: 22))
-                                        .shadow(color: .black.opacity(0.3) ,radius: 6)
-                                }
+            .toolbar {
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    
+                    Menu {
+                        
+                        HStack {
+                            NavigationLink(destination: FavoritesView()) {
+                                Label("Favorites", systemImage: "heart")
                             }
                         }
-            
-            
+                        
+                        HStack {
+                            NavigationLink(destination: SettingsView()) {
+                                Label("Settings", systemImage: "gear")
+                            }
+                        }
+                        
+                    } label: {
+                        Image(systemName: "line.horizontal.3")
+                            .resizable()
+                            .font(.system(size: 22))
+                            .shadow(color: .black.opacity(0.3) ,radius: 6)
+                    }
+                }
+            }
             .navigationTitle("Hello")
-            
-
-
+                        
         }
 //        CustomTabView()
 

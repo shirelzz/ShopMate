@@ -55,6 +55,7 @@
 		D6E9A7A62B5412F6007D138C /* AppleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E9A79D2B5412F6007D138C /* AppleButtonView.swift */; };
 		D6E9A7A72B5412F6007D138C /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E9A79E2B5412F6007D138C /* Toast.swift */; };
 		D6E9A7AA2B5413DB007D138C /* AdsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E9A7A92B5413DB007D138C /* AdsViews.swift */; };
+		D6F435142BB9D4BF0038938F /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F435132BB9D4BF0038938F /* Categories.swift */; };
 		D6F708072B541A3C00616E26 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = D6F708062B541A3C00616E26 /* GoogleSignIn */; };
 		D6F708092B541A3C00616E26 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D6F708082B541A3C00616E26 /* GoogleSignInSwift */; };
 		D6F7080B2B541B0C00616E26 /* +View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7080A2B541B0C00616E26 /* +View.swift */; };
@@ -92,6 +93,7 @@
 		D6E9A79E2B5412F6007D138C /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		D6E9A7A82B541328007D138C /* ShopMate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShopMate.entitlements; sourceTree = "<group>"; };
 		D6E9A7A92B5413DB007D138C /* AdsViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdsViews.swift; sourceTree = "<group>"; };
+		D6F435132BB9D4BF0038938F /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		D6F7080A2B541B0C00616E26 /* +View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+View.swift"; sourceTree = "<group>"; };
 		D6F7080C2B541C2400616E26 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D6F7080F2B541D1300616E26 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				D6E9A7892B5412BC007D138C /* Localizable.xcstrings */,
 				D6E9A77B2B541220007D138C /* Assets.xcassets */,
 				D6E9A77D2B541220007D138C /* Preview Content */,
+				D6F435132BB9D4BF0038938F /* Categories.swift */,
 			);
 			path = ShopMate;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				D6AD94E92B5414D500AA8773 /* Whatsapp.swift in Sources */,
 				D6E9A7A72B5412F6007D138C /* Toast.swift in Sources */,
 				D6F708222B549F0700616E26 /* CustomDialog.swift in Sources */,
+				D6F435142BB9D4BF0038938F /* Categories.swift in Sources */,
 				D6419D9C2B570BB60021CE06 /* URLClickableTextEditor.swift in Sources */,
 				D6AD94EB2B5414EC00AA8773 /* CustomButtonStyle.swift in Sources */,
 				D6AD94ED2B5414FF00AA8773 /* Router.swift in Sources */,
